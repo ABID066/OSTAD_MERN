@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- nav-bar  -->
+  <section id="nav-bar" class="container">
+    <header class="nav-bar">
+      <div class="brand"><a href="#hero">
+          <h1>Assignment</h1>
+        </a></div>
+      <div class="nav-list">
+        <div class="hamburger">
+          <div class="bar"></div>
+        </div>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#card">card</a></li>
+          <li><a href="#action">Action</a></li>
+        </ul>
+      </div>
+    </header>
+  </section>
+
+  <!-- header-section -->
+  <section id="hero" class="container">
+    <div class="header-info">
+      <div class="heading">
+        <h1 class="main-heading">Our <br>First Assignment</h1>
+        <a href="#" type="button" class="info-button">Let's Start</a>
+      </div>
+      <div class="header-img">
+        <img src="_45f3c8a1-e6fc-413a-a458-94c8b0238802.jpg" alt="">
+      </div>
+    </div>
+  </section>
+  
+  <!-- About-section -->
+  <section id="about" class="about container">
+    <div class="about-info">
+
+      <h1 class="about-info-heading">About The Assignment</h1>
+
+      <br>
+      <p class="about-info-p">We need to create a page with HTML, raw CSS or bootstrap. It has to be responsive. Make a banner.
+        There should be some cards under the banner containing an image and some more information like title, short description. 
+        And we have to put a navbar and footer too. </p><br><br>
+      <p class="about-info-p">-> Take an input field for age <br>-> if the age is greater than or equal to 18, show a card 
+        saying “You are an adult”. 
+        Else show a card saying “You are a child”
+      </p><br><br>
+
+      
+    </div>
+    <div class="about-img">
+      <div class="about-img-wrapper">
+        <img src="4.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- Card Section -->
+  <section id="card" class="card-container">
+    <div class="card">
+      <img src="1.jpg" alt="">
+      <div class="card-content">
+        <h3>Card 1</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id quos vero delectus facilis reiciendis h
+          arum natus, modi quisquam, maxime eum minima ullam, necessitatibus  libero mollitia atque officia repellendus aut.</p>
+          <a href="" class="btn">Read More</a>
+      </div>
+    </div>
+      <div class="card">
+        <img src="2.jpg" alt="">
+        <div class="card-content">
+          <h3>Card 3</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id quos vero delectus facilis reiciendis h
+            arum natus, modi quisquam, maxime eum minima ullam, necessitatibus  libero mollitia atque officia repellendus aut.</p>
+            <a href="" class="btn">Read More</a>
+        </div>
+      </div>
+        <div class="card">
+          <img src="3.jpg" alt="">
+          <div class="card-content">
+            <h3>Card 3</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id quos vero delectus facilis reiciendis h
+              arum natus, modi quisquam, maxime eum minima ullam, necessitatibus  libero mollitia atque officia repellendus aut.</p>
+              <a href="" class="btn">Read More</a>
+          </div>
+    </div>
+
+  </section>
+
+  <!-- action-section -->
+  <section class="action-container" id="action">
+  
+  <h1>Enter Your Age</h1>
+  <input type="number" id="ageInput">
+  <button onclick="checkAge()">Check</button>
+
+  <div id="resultCard" class="result" style="display: none";>
+    <div class="card-title"></div>
+    <div class="card-text" style="font-size: 1.8rem; margin-top: 7px;";></div>
+  </div>
+
+  </section>
+  
+
+  <!-- Footer-section -->
+<footer class="footer container">
+    <div class="footer-contact">
+      <h1>the footer section</h1>
+      <p>Email: myname@gmail.com</p>
+      <p>Mobile: 191 009 2028</p>
+
+    </div>
+    <div class="footer-social">
+      <h1>follow me</h1>
+      <div class="social-icon">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://kit.fontawesome.com/8de7d269f9.js" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

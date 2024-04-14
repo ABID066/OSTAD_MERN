@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Responsive Page</h1>
+    </header>
+
+    <nav>
+        <div class="container">
+            <span>Navbar Content</span>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Input field for age -->
+        <div class="form-group">
+            <label for="age">Enter your age:</label>
+            <input type="number" class="form-control" id="age" placeholder="Enter your age">
+        </div>
+
+        <!-- Display card based on age -->
+        <div id="result" class="card"></div>
+
+        <!-- Example cards -->
+        <div class="card">
+            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image">
+            <div class="card-body">
+                <h5 class="card-title">Card Title</h5>
+                <p class="card-text">Short description goes here.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Card Image">
+            <div class="card-body">
+                <h5 class="card-title">Another Card</h5>
+                <p class="card-text">Another short description.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Company</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies (jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript to handle age input and display corresponding card -->
+    <script>
+        document.getElementById('age').addEventListener('change', function () {
+            var age = parseInt(this.value);
+            var resultElement = document.getElementById('result');
+
+            if (isNaN(age)) {
+                resultElement.innerHTML = '';
+            } else {
+                resultElement.innerHTML = '<div class="card">' +
+                    '<div class="card-body">' +
+                    '<h5 class="card-title">' + (age >= 18 ? 'You are an adult' : 'You are a child') + '</h5>' +
+                    '</div>' +
+                    '</div>';
+            }
+        });
+    </script>
+</body>
+
+</html>

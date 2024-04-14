@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <h1 id="myID" class="myClass">HELLO1</h1>
+    <h1 class="myClass">HELLO2</h1>
+    <h1>HELLO3</h1>
+    <img src="https://www.rabbitholebd.com/_next/image?url=https%3A%2F%2Fdidbxtymavoia.cloudfront.net%2Fcms%2Fvideos%2F1712060106_260x372.jpg&w=1920&q=75"
+    width="100" id="img">
+    <ul id="mylist">
+        <li>Bangladesh</li>
+        <li>India</li>
+        <li>Nepal</li>
+    </ul>
+
+    <script>
+
+        //Javascript DOM: finding element
+        let a= document.getElementsByName("h1");
+        let b= document.getElementsByClassName("myClass");
+        let c= document.getElementById("myID");
+        //let d= document.querySelector("")
+        console.log(b);
+
+        //manufulation: innertext
+        c.innerText="Hello11111"
+
+        //manufulation: innerHTML
+        c.innerHTML="<button>helllo</button>"
+        
+        //manufulation: css class
+        b[1].classList.add('text-danger')
+
+        let img=document.getElementById("img")
+        img.src="https://www.rabbitholebd.com/_next/image?url=https%3A%2F%2Fdidbxtymavoia.cloudfront.net%2Fcms%2Fvideos%2F1712557644_260x372.jpg&w=1920&q=75"
+        img.setAttribute('width',300)
+        img.setAttribute("height", 400)
+    </script>
+</body>
+</html>

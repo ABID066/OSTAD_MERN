@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function myfun(a,b){
+            
+            document.write(a+b+'<br/>'  );
+        }
+        myfun(10,4);myfun(10.5,4.5);myfun(1.10,4.5);myfun(10,45);myfun(150,4);
+
+        function myfun2(...varName){
+            let sum=varName[0]+varName[5]+varName[1]+varName[4]+varName[3]+varName[7]+varName[6];
+            document.write(sum+'<br/>');
+            document.write(varName);
+        }
+        myfun2(10,54,41,163,14,154,1454,4,5)
+
+            let car={model: "RangeRover", year: 2025, color: "Black", cc: 2500, driver: true}
+            document.write(car);
+            document.log(car);
+        
+    </script>
+</body>
+</html>

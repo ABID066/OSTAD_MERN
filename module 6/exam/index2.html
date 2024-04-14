@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function countVowels(str) {
+            const vowels = ['a', 'e', 'i', 'o', 'u'];
+            let vowelCount = 0;
+
+            for (let char of str.toLowerCase()) {
+                if (vowels.includes(char)) {
+                    vowelCount++;
+                }
+            }
+            return vowelCount;
+        }
+        const inputString = "If you spin around three times, you'll start to feel melancholy";
+        const result = countVowels(inputString);
+        document.write(`Number of vowels in "${inputString}" :  ${result}`);
+    </script>
+</body>
+</html>

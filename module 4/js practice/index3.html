@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let city= ["Khulna", "Dhaka","Rajshahi"];
+        for(i=0; i<city.length; i++)
+        {
+            document.write(city[i]+'<br/>')
+        }
+        city.forEach(function(town){
+            document.write(town+'<br/>')
+        })
+        let city2=["Borisal", "Jessore", "Rangpur", "CoxBazer"]
+        let add=city.concat(city2)
+        document.write(add);
+        let MyName="Sayad Bin Kamrul"
+        let MyNameArray=Array.from(MyName);
+        
+        document.write('<br/>'+MyNameArray);
+
+        let check= add.includes("Dhaka");
+        document.write('<br/>'+check);
+
+        let check1= city2.includes("Dhaka");
+        document.write('<br/>'+check1);
+
+        let check2= add.indexOf("Rangpur");
+        document.write('<br/>'+check2);
+
+        add.pop();
+        document.write('<br/>'+add);
+
+        add.push("Jessore");
+        document.write('<br/>'+add);
+
+        add.reverse();
+        document.write('<br/>'+add);
+    </script>
+</body>
+</html>
