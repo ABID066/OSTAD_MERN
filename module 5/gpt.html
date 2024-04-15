@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getData()">Get data</button>
+    <div id="data"></div> <!-- Ensure this element exists -->
+
+    <script>
+        async function getData() {
+            let url = "https://crud.teamrabbil.com/api/v1/readproduct";
+            let res = await fetch(url);
+            let resObj = await res.json(); // Assuming the JSON response structure has a 'data' key
+            document.getElementById("data").innerText = JSON.stringify(resObj["data"]); // Correct usage
+        }
+    </script>
+</body>
+</html>
