@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJEX Post REQUEST</title>
+</head>
+<body>
+    
+
+<button onclick="PostReq()">POST REQUEST</button>
+
+    <SCript>
+        function PostReq()
+        {
+            var url="https://crud.teamrabbil.com/api/v1/CreateProduct"
+
+            var BodyData={Img:"https://www.rabbitholebd.com/_next/image?url=https%3A%2F%2Fdidbxtymavoia.cloudfront.net%2Fcms%2Fvideos%2F1711973590_Barca260x3721.jpg&w=1920&q=75",
+            ProductCode:"12ddf3df",Qty:"d2dfdd",TotalPrice:"d",UnitPrice:"45ddf4d"};
+            var config={
+                method:"POST",
+                headers: {'Accept':'application/json','Content-Type':'application/json'},
+                body:JSON.stringify(BodyData)
+            }
+
+            fetch(url, config)
+            .then(response=>response.json())
+            .then(result=>console.log(result))
+            .catch(err=>console.log(err))
+        }
+    </SCript>
+</body>
+</html>
