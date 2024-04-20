@@ -32,16 +32,25 @@ function App() {
         })
       )
   }
+  let [email,setEmail]=useState("Default email")
 
 
 
   return (
     <div>
       <h1>Number: {number}</h1>
-      <button onClick={()=>setNumber(number+1)}><h3>Click</h3></button>
+      <button onClick={()=>setNumber(number+1)}><h3>Plus</h3></button>
+      <button onClick={()=>setNumber(number-1)}><h3>Minus</h3></button>
+      <button onClick={()=>setNumber(0)}><h3>RESET</h3></button>
       <br/><br/><br/><br/>
 
 
+    <h1>{email}</h1>
+    <label><h3>Email:</h3></label><br/>
+    <input onChange={(e)=>{setEmail(e.target.value)}} type="text" placeholder="email" />
+
+
+      <br/><br/><br/><br/>
       <h1>{myObj.key1}</h1>
       <h1>{myObj.key2}</h1>
       <h1>{myObj.key3}</h1>
