@@ -1,0 +1,7 @@
+npm init --y
+
+
+"start": "node index.js"
+
+
+node index.js
