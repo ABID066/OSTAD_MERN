@@ -18,3 +18,7 @@ install bodyParser in js application
 install multer in JS application
 
 ---> npm install --save multer
+
+
+install nodemon 
+--->  npm i nodemon 

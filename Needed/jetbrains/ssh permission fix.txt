@@ -1,0 +1,27 @@
+Here are the steps you can take:
+
+Check File Permissions:
+Use the ls -l /Users/firozanam/jetbrains/scripts/install.sh command to view the file's permissions.
+
+If you don't have execute permissions (denoted by -rwxr-xr-x), proceed to the next step.
+
+Grant Execute Permissions:
+Use the chmod +x /Users/firozanam/jetbrains/scripts/install.sh command to grant execute permissions to the file.
+
+Rerun the Script:
+Attempt to execute the script again using the same command: /Users/firozanam/jetbrains/scripts/install.sh
+
+Consider Administrative Privileges:
+If the script still fails with a permission error, you may need to run it with administrative privileges using sudo: sudo /Users/firozanam/jetbrains/scripts/install.sh
+
+Review Script Content:
+If the permission error persists, examine the script's contents for any potential issues or dependencies that might be causing the problem.
+
+Additional Tips:
+Double-check the file path: Ensure you're using the correct path to the script.
+Verify file integrity: If you downloaded the script, make sure it downloaded correctly and isn't corrupted.
+Check for dependencies: If the script requires other programs or tools, ensure they are installed on your system.
+Consult documentation: Refer to the script's documentation or support resources for specific troubleshooting steps.
+
+
+
