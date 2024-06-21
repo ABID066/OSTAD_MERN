@@ -1,4 +1,7 @@
 npm create vite
 npm install
-npm run build
-npm run dev  /  npx vite
+npm run build  // npm vite build
+npm run dev  //  npx vite
+
+
+just type rsc
