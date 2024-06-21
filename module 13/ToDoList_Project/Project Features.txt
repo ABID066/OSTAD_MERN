@@ -1,0 +1,23 @@
+
+
+1. User Registration
+2. User Login
+3. User Auth By JWT Token
+4. User Profile Read
+5. User Profile Update
+6. User To-do List Create
+7. User To-do List Read
+
+8. User To-do List Update
+9. User To-do List Delete
+10. User To-do List Complete/Cancel Mark
+11. User To-do List Complete/Cancel Filter 
+12. User To-do List Date Filter
+
+
+1,3,4--> ProfileController ->
+
+2--> LoginController
+3--> AuthVerifyMiddleware
+
+(6-12)-->ToDoListController

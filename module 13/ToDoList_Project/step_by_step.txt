@@ -1,0 +1,34 @@
+1. npm init --y
+
+2. create index.js and app.js
+
+3. npm i express
+
+4. npm i body-parser
+
+5. npm i jsonwebtoken
+
+6. npm i mongoose
+
+7. npm i cors
+
+8. npm i express-mongo-sanitize
+
+9. npm i express-rate-limit
+
+10. npm i helmet
+
+11. npm i hpp
+
+12. npm i xss-clean
+
+13. npm i dotenv
+
+14. npm i nodemon
+npm i nodemailer
+
+15. create .env file and src folder and SO ON 
+
+16. then in src/routes create api.js 
+
+17. CONTINUE 
