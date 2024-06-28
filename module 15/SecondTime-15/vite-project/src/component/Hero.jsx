@@ -9,14 +9,19 @@ const Hero = (props) => {
             <br/>
             {(()=> {
                 if (status)
+                    // eslint-disable-next-line react/prop-types
                     return <button onClick={props.childBtnClick}>lOGoUT FORM HERO</button>
                 else
+                    // eslint-disable-next-line react/prop-types
                     return <button onClick={props.childBtnClick}>lOGin to HERO</button>
             })()}
 
             <ul>
+                {/* eslint-disable-next-line react/prop-types */}
                 <li>Name: {props.items['name']}</li>
+                {/* eslint-disable-next-line react/prop-types */}
                 <li>Age:{props.items['age']}</li>
+                {/* eslint-disable-next-line react/prop-types */}
                 <li>City:{props.items['city']}</li>
             </ul>
         </div>

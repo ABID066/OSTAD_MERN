@@ -19,6 +19,12 @@ const App = () => {
 
     let marks =90;
     const city= ['Dhaka','Khulna','Delhi','Kolkata']
+    const cities = [
+        { id: 1, name: 'Dhaka' },
+        { id: 2, name: 'Khulna' },
+        { id: 3, name: 'Delhi' },
+        { id: 4, name: 'Kolkata' }
+    ];
 
     const itemsObj= {
         name: "md abid",
@@ -64,6 +70,15 @@ const App = () => {
                     })
                 }
             </ul>
+
+
+
+            <ul>
+                {cities.map((city) => {
+                    return <li key={city.id}>{city.name}</li>
+                })}
+            </ul>
+
 
 
             #Conditional Rendering

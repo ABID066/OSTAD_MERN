@@ -1,3 +1,23 @@
 npm i milligram
 
 npm i bootstrap@5.3.3
+
+
+
+
+
+
+
+
+
+useEffect:
+
+need to remove ReactStric mode otherwise useEffect will execute 2x
+
+if deps: value will changed then useEffect will execute again
+
+
+React-Router-Dom:
+
+npm i react-router-dom
+
