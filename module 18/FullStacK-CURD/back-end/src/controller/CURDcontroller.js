@@ -20,6 +20,15 @@ exports.readProduct=async (req,res)=>{
         res.json({status:"fail",message:err.toString()});
     }
 }
+exports.readOneProduct=async (req,res)=>{
+    try {
+        let {id} = req.params
+        let data = await productModel.findOne({_id:id});
+        res.json({status:"success",message:data});
+    }catch(err){
+        res.json({status:"fail",message:err.toString()});
+    }
+}
 
 exports.updateProduct=async (req,res)=>{
     try {

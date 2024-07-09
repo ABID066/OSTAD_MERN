@@ -10,7 +10,8 @@ const BlogList = (props) => {
 
                     {
 
-                        props.list.map((item, index) => {
+                        // eslint-disable-next-line react/prop-types
+                        props.list.map( (item, index) => {
                             return(
                                 <Link key={index.toString()} to={"/details/"+item['id']} className="card w-100 glass">
                                     <figure><img src={item['img']} alt="card!"/></figure>

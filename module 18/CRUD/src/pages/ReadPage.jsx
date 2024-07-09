@@ -46,7 +46,7 @@ const ReadPage = () => {
             <div className="container">
             <div className="row">
                 <div className="col-12">
-                    <h1>Product List</h1>
+                    <h1>ProductList</h1>
                     <button className="btn btn-primary" onClick={()=>setRefresh(refresh+1)}>Refresh</button>
                     <table className="table table-striped table-bordered text-center top-50">
                         <thead>
