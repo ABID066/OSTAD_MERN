@@ -41,7 +41,6 @@ const ReadProduct = () => {
             toast.error("Delete Failed");
         }
 
-
     }
     return (
         <div>

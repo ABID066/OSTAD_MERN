@@ -17,6 +17,7 @@ function checkAge() {
 
 	if (!isNaN(age)) {
 		resultCard.style.display = 'block';
+		
 		if (age >= 18) {
 		resultCardTitle.textContent = "Welcome, You are an Adult!";
 		resultCardText.textContent = "You have access to all features.";

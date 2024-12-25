@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col';
 import axios from "axios";
 import toast from "react-hot-toast";
 import {useNavigate, useParams} from "react-router-dom";
+import FullScreenLoader from "../Loader/FullScreenLoader.jsx";
 
 
 const UpdateProduct = () => {
@@ -14,7 +15,10 @@ const UpdateProduct = () => {
     let {id}= useParams();
     const navigate = useNavigate();
 
-    const [foodData, setFoodData] = useState({ id: id, name: '', code: '', img: '', category: '', quantity: '', price: '' });
+    const [foodData, setFoodData] = useState({
+        id: id, name: '', code: '', img: '', category: '', quantity: '', price: '' });
+    
+    let [loading, setLoading] = useState(false);
 
     useEffect(() => {
         (async () => {
@@ -24,8 +28,9 @@ const UpdateProduct = () => {
 
     const fetchData = async () => {
         try {
+            setLoading(true);
             const res = await axios.get(`https://food-item-black.vercel.app/api/v1/readOneProduct/${id}`);
-            console.log(res.data['message']);
+            //console.log(res.data['message']);
             setFoodData({
                 id: id,
                 name: res.data['message']['name'],
@@ -35,6 +40,7 @@ const UpdateProduct = () => {
                 quantity: res.data['message']['quantity'],
                 price: res.data['message']['price'],
             });
+            setLoading(false);
         } catch (err) {
             console.log(err);
         }
@@ -66,10 +72,11 @@ const UpdateProduct = () => {
         }
     };
 
-    return (
+    return (<>
+            {loading && <FullScreenLoader />}
         <Container>
             <h1>Update Food Item</h1>
-            <Form onSubmit={handleSubmit}>
+            <Form style={{ marginTop: '70px', marginBottom: "30px" }} onSubmit={handleSubmit}>
                 <Row className="mb-3">
                     <Col xs={12} md={6} lg={4}>
                         <Form.Group controlId="formFoodName">
@@ -151,6 +158,7 @@ const UpdateProduct = () => {
                 </Button>
             </Form>
         </Container>
+        </>
     );
 };
 

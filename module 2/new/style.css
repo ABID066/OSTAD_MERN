@@ -1,0 +1,39 @@
+h4{
+    color: aqua;
+    font-size: 70px;
+}
+.text1 {
+    color: rgb(177, 46, 63);
+}
+.text2 {
+    color: mediumpurple;
+}
+#text3 {
+    color: rgb(153, 177, 46);
+}
+*{
+    font-size: 50px;
+}
+h1,h2,p{
+    text-align: center;
+    border-style: ridge;
+}
+p{
+    color: rgb(21, 226, 65);
+    display: inline-flex;
+}
+
+body{
+    background-image: url("2862104.jpg");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-attachment:scroll;
+    background-size:cover;
+    
+}
+.my-div{
+    height: 400px;
+    width: 400px;
+    background-color: red;
+    border-radius: 40px 1px 40px 1px;
+}

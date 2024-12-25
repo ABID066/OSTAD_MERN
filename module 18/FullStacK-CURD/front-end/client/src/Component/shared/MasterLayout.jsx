@@ -7,6 +7,7 @@ const MasterLayout = (props) => {
         <div>
             <NavBar/>
             <div className="main-container">
+                {/* eslint-disable-next-line react/prop-types */}
                 {props.children}
             </div>
             <Footer/>

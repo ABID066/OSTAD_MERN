@@ -5,34 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0993d26e-bef3-406f-b10e-b73c17e67060" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/front-end/client/src/Component/Loader/FullScreenLoader.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/client/src/Component/PageComponent/CreateProduct.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/client/src/Component/PageComponent/OK.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/client/src/Component/PageComponent/ReadProduct.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/client/src/Component/PageComponent/UpdateProduct.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/client/src/Component/PageComponent/notGPTold.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/client/src/Component/shared/Footer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/client/src/Component/shared/MasterLayout.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/client/src/Component/shared/NavBar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/client/src/utility/helper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/controllers/CartListController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/controllers/FeaturesController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/controllers/InvoiceController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/controllers/ProductController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/controllers/UserController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/controllers/WishListController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/models/BrandModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/models/CartModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/models/CategoryModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/models/FeaturesModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/models/InvoiceModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/models/InvoiceProductModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/models/PaymentSettingModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/models/ProductDetailsModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/models/ProductModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/models/ProductSliderModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/models/ProfileModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/models/ReviewModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/models/UserModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/models/WishModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/routes/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/services/CartListServices.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/services/FeaturesServices.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/services/InvoiceServices.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/services/ProductServices.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/services/UserServices.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module 20/MernEcommerce/src/services/WishListServices.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../module 13/MERN-X" beforeDir="false" afterPath="$PROJECT_DIR$/../../module 13/MERN-X" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module 17/BasicEcomm/src/components/MasterLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../module 17/BasicEcomm/src/components/MasterLayout.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../module 17/BlogProject/src/Component/BlogList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../module 17/BlogProject/src/Component/BlogList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CRUD/src/Loader/FullScreenLoader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../CRUD/src/Loader/FullScreenLoader.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CRUD/src/pages/ReadPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../CRUD/src/pages/ReadPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/FullStacK-CURD.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/src/controller/CURDcontroller.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/src/controller/CURDcontroller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/src/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/src/routes/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/client/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/client/src/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/client/src/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/client/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/client/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/client/src/pages/CreatePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/client/src/pages/CreatePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/client/src/pages/ReadPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/client/src/pages/ReadPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/client/src/pages/UpdatePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/client/src/pages/UpdatePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module 17/BasicEcomm/src/components/ProductList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../module 17/BasicEcomm/src/components/ProductList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/client/src/Component/PageComponent/CreateProduct.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/client/src/Component/PageComponent/CreateProduct.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/client/src/Component/PageComponent/ReadProduct.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/client/src/Component/PageComponent/ReadProduct.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/client/src/Component/PageComponent/UpdateProduct.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/client/src/Component/PageComponent/UpdateProduct.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/client/src/Component/shared/MasterLayout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/client/src/Component/shared/MasterLayout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/client/src/Component/shared/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/client/src/Component/shared/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../module 6/assignment/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../module 6/assignment/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,11 +105,31 @@
       <updated>1720509431264</updated>
       <workItem from="1720509432292" duration="12961000" />
       <workItem from="1720537861570" duration="12760000" />
-      <workItem from="1720558308801" duration="5873000" />
+      <workItem from="1720558308801" duration="7740000" />
+      <workItem from="1720589521509" duration="3261000" />
+      <workItem from="1720718990852" duration="2570000" />
+      <workItem from="1720771739720" duration="3126000" />
+      <workItem from="1721656094071" duration="1159000" />
+      <workItem from="1721709011754" duration="1520000" />
+      <workItem from="1721744880640" duration="3673000" />
+      <workItem from="1722009882496" duration="2821000" />
+      <workItem from="1722076029131" duration="3000" />
+      <workItem from="1725169846881" duration="167000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

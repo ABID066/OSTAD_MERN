@@ -4,6 +4,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import {NavLink} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 
 const NavBar = () => {
@@ -23,8 +25,8 @@ const NavBar = () => {
                                   </Offcanvas.Header>
                                   <Offcanvas.Body>
                                       <Nav className="justify-content-end flex-grow-1 pe-3">
-                                        <Nav.Link href="/">Home</Nav.Link>
-                                        <Nav.Link href="/createPage">Create Product</Nav.Link>
+                                        <NavLink href="/">Home</NavLink>
+                                        <Link className="nav-link" to="/createPage">Create Product</Link>
                                       </Nav>
                                   </Offcanvas.Body>
                               </Navbar.Offcanvas>
