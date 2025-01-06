@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE TEST ONE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/tailwind.config.js"></script>
+</head>
+<body class="overflow-x-hidden bg-gray-50">
+
+
+
+    <!-- Navbar -->
+
+    <nav class="w-full fixed top-0 left-0 bg-white shadow-md z-50 px-8 lg:px-24 py-4 flex items-center justify-between">
+        <img src="./assets/Logo.png" alt="Logo" class="w-28 cursor-pointer">
+        <ul class="hidden md:flex items-center space-x-6">
+            <li><a href="#top" class="hover:text-purple-600">Home</a></li>
+            <li><a href="#portfolio" class="hover:text-purple-600">Portfolio</a></li>
+            <li><a href="#about" class="hover:text-purple-600">About me</a></li>
+            <li><a href="#testimonials" class="hover:text-purple-600">Testimonials</a></li>
+            <li><a href="#contact" class="hidden md:block lg:hidden hiddenhover:text-purple-600">Contact</a></li>
+        </ul>
+
+        <a class="hidden lg:flex items-center gap-3 px-8 py-2.5 border border-purple-500 rounded-md ml-4" href="#contact">
+            Contact me
+        </a>
+
+        <button class="block md:hidden" onclick="openMenu()">
+            <img src="./assets/menu.png" alt="Menu" class="w-7">
+        </button>
+        <!--Mobile view-->
+    <ul id="sideMenu" class="flex md:hidden flex-col py-20 px-10 fixed -right-64 gap-4
+            top-0 bottom-0 w-64 z-50 h-screen bg-purple-200 transition duration-500">
+        <div class="absolute right-6 top-6" onclick="closeMenu()">
+            <img alt="" src="./assets/x-mark.png" class="w-8 cursor-pointer">
+        </div>
+        
+        <li><a href="#top" onclick="closeMenu()">Home</a></li>
+        <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
+        <li><a href="#about" onclick="closeMenu()">About me</a></li>  
+        <li><a href="#testimonials" onclick="closeMenu()">Testimonials</a></li> 
+        <li><a href="#contact" onclick="closeMenu()">Contact</a></li> 
+        
+        
+    </ul>
+    </nav>
+
+
+
+    <!-- Hero Section -->
+
+    <section id="home" class="flex flex-col md:flex-row items-center justify-between w-full px-8 md:px-16 lg:px-24 py-32 mt-20 bg-white">
+        <div class="max-w-2xl space-y-6">
+            <p class="text-xl text-gray-500">Hey, I am John</p>
+            <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900">
+                I create <span class="text-purple-600">product design</span> and brand experience
+            </h1>
+            <p class="text-lg text-gray-600">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+            </p>
+
+            
+            
+            <button class="bg-purple-600 text-white py-3 px-8 rounded-lg hover:bg-purple-700">
+                Get In Touch
+            </button>
+        </div>
+        <div class="mt-12 md:mt-0">
+            <img src="./assets/Group 11 1.png" alt="John" class=" max-w-full md:max-w-lg">
+        </div>
+    </section>
+
+
+
+
+    <!-- Skills Section -->
+     
+    <section id="skills" class="w-full px-8 md:px-16 lg:px-24 py-24 bg-gray-50">
+        <div class="text-center mb-16">
+            <p class="text-lg text-gray-500">My Skills</p>
+            <h2 class="text-4xl font-bold text-gray-900">My Expertise</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-slate-100 p-6 rounded-lg shadow-md hover:shadow-lg">
+                <div class="w-16 h-16 flex items-center justify-center shadow-sm mb-4">
+                    <img src="./assets/Strategy & Direction.png" alt="Strategy Icon">
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Strategy & Direction</h3>
+                <p class="text-gray-600 text-sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                </p>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-slate-100 p-6 rounded-lg shadow-md hover:shadow-lg">
+                <div class="w-16 h-16 flex items-center justify-center shadow-sm mb-4">
+                    <img src="./assets/Branding & Logo.png" alt="Branding Icon">
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Branding & Logo</h3>
+                <p class="text-gray-600 text-sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                </p>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-slate-100 p-6 rounded-lg shadow-md hover:shadow-lg">
+                <div class="w-16 h-16 flex items-center justify-center shadow-sm mb-4">
+                    <img src="./assets/UI & UX Design.png" alt="UI/UX Icon">
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">UI & UX Design</h3>
+                <p class="text-gray-600 text-sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                </p>
+            </div>
+            <!-- Card 4 -->
+            <div class="bg-slate-100 p-6 rounded-lg shadow-md hover:shadow-lg">
+                <div class="w-16 h-16 flex items-center justify-center shadow-sm mb-4">
+                    <img src="./assets/feather-pen 1.png" alt="Webflow Icon">
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Webflow Development</h3>
+                <p class="text-gray-600 text-sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+                </p>
+            </div>
+        </div>
+    </section>
+
+ 
+
+
+<!-- About Section -->
+
+<section id="about" class="flex flex-col md:flex-row items-center justify-between w-full px-8 md:px-16 lg:px-24 py-24 bg-white">
+
+    <div class="relative w-full md:w-1/2 flex justify-center">
+        <img src="./assets/About Me.png" alt="Profile" class="relative z-10 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[500px] lg:h-[650px]  cover">
+    </div>
+
+    <!-- Right Side: About Content -->
+    <div class="mt-12 md:mt-0 md:w-[45%] space-y-6 text-center md:text-left">
+        <p class="text-lg text-gray-600 font-medium">About</p>
+        <h2 class="text-4xl font-bold text-gray-900">About Me</h2>
+        <p class="text-gray-600">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce varius faucibus massa sollicitudin amet augue. Nibh metus a semper purus mauris duis.
+            Lorem eu neque, tristique quis duis. Nibh scelerisque ac adipiscing velit non nulla in amet pellentesque.
+        </p>
+        <p class="text-gray-600">
+            Sit turpis pretium eget maecenas. Vestibulum dolor mattis consectetur eget commodo vitae. Amet pellentesque sit pulvinar lorem mi a, euismod risus.
+        </p>
+    </div>
+</section>
+
+
+
+
+<!-- Portfolio Section -->
+
+<section id="portfolio" class="w-full px-8 md:px-16 lg:px-24 py-24 bg-white">
+
+    <div class="flex justify-between items-center mb-16">
+        <div class="text-left">
+            <p class="text-sm pb-3 text-gray-900 font-semibold">Recent Projects</p>
+            <h2 class="text-4xl font-bold text-gray-900">My Portfolio</h2>
+        </div>
+        <div class="text-right">
+            <a href="#" class="flex items-center gap-2 bg-pink-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-pink-700 transition">
+                <img src="/assets/Social icon.png" alt="Dribbble Icon" class="w-5 h-5">
+                Visit My Dribbble
+            </a>
+        </div>
+        
+    </div>
+
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Portfolio Card 1 -->
+        <div class="bg-white pb-5 rounded-lg shadow-md hover:shadow-lg">
+            <img src="/assets/Image.png" alt="Ahuse Project" class="w-full h-48 object-cover mb-9 rounded">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2 mx-5">Ahuse</h3>
+            <p class="text-gray-600 mb-4 mx-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+            </p>
+            <a href="#" class="text-purple-600 hover:underline mx-5">View in Dribbble &rarr;</a>
+        </div>
+        <!-- Portfolio Card 2 -->
+        <div class="bg-white pb-5 rounded-lg shadow-md hover:shadow-lg">
+            <img src="/assets/Card-1Image.png" alt="App Dashboard" class="w-full h-48 object-cover mb-9 rounded">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2 mx-5">App Dashboard</h3>
+            <p class="text-gray-600 mb-4 mx-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+            </p>
+            <a href="#" class="text-purple-600 hover:underline mx-5">View in Dribbble &rarr;</a>
+        </div>
+        <!-- Portfolio Card 3 -->
+        <div class="bg-white pb-5 rounded-lg shadow-md hover:shadow-lg">
+            <img src="/assets/Card-2Image.png" alt="Easy Rent Project" class="w-full h-48 object-cover mb-9 rounded">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2 mx-5">Easy Rent</h3>
+            <p class="text-gray-600 mb-4 mx-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+            </p>
+            <a href="#" class="text-purple-600 hover:underline mx-5">View in Dribbble &rarr;</a>
+        </div>
+        
+        
+    </div>
+</section>
+
+
+
+
+<!--Testimonial-->
+
+<section id="testimonials" class="bg-slate-100 py-20 px-8 md:px-16 lg:px-24">
+    <div class="text-left mb-16">
+        <p class="text-sm pb-3 text-gray-900 font-semibold">Clients Feedback</p>
+        <h2 class="text-4xl font-bold text-gray-900">Customer testimonials</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Testimonial Card 1 -->
+        <div class="p-6 rounded-lg shadow-md hover:shadow-lg border border-green-700">
+            <div class="flex items-center mb-4">
+                <span class="text-[#006B6A] text-3xl">★★★★★</span>
+            </div>
+            <p class="text-gray-600 mb-4">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra."
+            </p>
+            <div class="flex items-center">
+                <img src="/assets/Avatar Image (2).png" alt="Dianne Russell" class="w-12 h-12 rounded-full mr-4">
+                <div>
+                    <p class="font-bold text-gray-800">Dianne Russell</p>
+                    <p class="text-gray-500">Starbucks</p>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial Card 2 -->
+        <div class=" p-6 rounded-lg shadow-md hover:shadow-lg border  border-green-700">
+            <div class="flex items-center mb-4">
+                <span class="text-[#006B6A] text-3xl">★★★★★</span>
+            </div>
+            <p class="text-gray-600 mb-4">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra."
+            </p>
+            <div class="flex items-center">
+                <img src="/assets/Avatar Image.png" alt="Kristin Watson" class="w-12 h-12 rounded-full mr-4">
+                <div>
+                    <p class="font-bold text-gray-800">Kristin Watson</p>
+                    <p class="text-gray-500">Louis Vuitton</p>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial Card 3 -->
+        <div class=" p-6 rounded-lg shadow-md hover:shadow-lg border  border-green-700">
+            <div class="flex items-center mb-4">
+                <span class="text-[#006B6A] text-3xl">★★★★★</span>
+            </div>
+            <p class="text-gray-600 mb-4">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra."
+            </p>
+            <div class="flex items-center">
+                <img src="/assets/Avatar Image.png" alt="Kathryn Murphy" class="w-12 h-12 rounded-full mr-4">
+                <div>
+                    <p class="font-bold text-gray-800">Kathryn Murphy</p>
+                    <p class="text-gray-500">McDonald's</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!---Contact Section--->
+
+<section id="contact" class="w-full px-8 py-24 bg-white text-black">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <p class="text-md text-black my-8"><b>Get In Touch</b></p>
+            <h2 class="text-4xl font-bold text-black">Contact me</h2>
+            <p class="text-gray-900 mt-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <form action="#" method="POST" class="space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <label for="first-name" class="block text-sm font-medium text-gray-400">First name</label>
+                    <input type="text" id="first-name" name="first-name" class="w-full mt-2 p-3 rounded-md bg-white border border-purple-700  text-white focus:outline-none focus:border-purple-400">
+                </div>
+                <div>
+                    <label for="last-name" class="block text-sm font-medium text-gray-400">Last name</label>
+                    <input type="text" id="last-name" name="last-name" class="w-full mt-2 p-3 rounded-md bg-white border border-purple-700 text-white focus:outline-none focus:border-purple-400">
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-400">Email</label>
+                    <input type="email" id="email" name="email" class="w-full mt-2 p-3 rounded-md bg-white border border-purple-700 text-white focus:outline-none focus:border-purple-400">
+                </div>
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-400">Phone number</label>
+                    <input type="tel" id="phone" name="phone" class="w-full mt-2 p-3 rounded-md bg-white border border-purple-700 text-white focus:outline-none focus:border-purple-400">
+                </div>
+            </div>
+            <div>
+                <label for="topic" class="block text-sm font-medium text-gray-400">Choose a topic</label>
+                <select id="topic" name="topic" class="w-full mt-2 p-3 rounded-md bg-white border border-purple-700 text-white focus:outline-none focus:border-purple-400">
+                    <option value="" disabled selected>Select one...</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="support">Support</option>
+                    <option value="feedback">Feedback</option>
+                </select>
+            </div>
+            <div>
+                <label for="message" class="block text-sm font-medium text-gray-400">Message</label>
+                <textarea id="message" name="message" rows="4" class="w-full mt-2 p-3 rounded-md bg-white border border-purple-700 text-white focus:outline-none focus:border-purple-400" placeholder="Type your message..."></textarea>
+            </div>
+            <div class="flex items-center">
+                <input type="checkbox" id="terms" name="terms" class="h-5 w-5 text-purple-600 focus:ring-purple-500 border-gray-600 bg-white">
+                <label for="terms" class="ml-3 text-sm text-gray-400">I accept the terms</label>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+
+
+
+<!---Footer-->
+
+<footer class="bg-gray-100 py-8">
+    <div class="container mx-auto px-6 py-10 flex justify-between items-center">
+      <div class="flex items-center gap-4">
+        <img src="/assets/Logo.png" alt="Logo" class="h-8">
+        
+      </div>
+  
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex space-x-6">
+        <a href="#home" class="text-gray-700 hover:text-gray-900">Home</a>
+        <a href="#portfolio" class="text-gray-700 hover:text-gray-900">Portfolio</a>
+        <a href="#about" class="text-gray-700 hover:text-gray-900">About me</a>
+        <a href="#testimonials" class="text-gray-700 hover:text-gray-900">Testimonials</a>
+      </nav>
+  
+      <!-- Social Media Icons -->
+      <div class="flex items-center space-x-4">
+        <a href="#" class="hover:opacity-75">
+          <img src="/assets/Facebook.png" alt="Facebook" class="h-6 w-6">
+        </a>
+        <a href="#" class="hover:opacity-75">
+          <img src="/assets/Vector.png" alt="Instagram" class="h-6 w-6">
+        </a>
+        <a href="#" class="hover:opacity-75">
+          <img src="/assets/Vector (1).png" alt="Twitter" class="h-6 w-6">
+        </a>
+        <a href="#" class="hover:opacity-75">
+          <img src="/assets/Vector (2).png" alt="LinkedIn" class="h-6 w-6">
+        </a>
+      </div>
+    </div>
+  
+    
+    <div class="border-t border-gray-300 my-6 mx-20"></div>
+
+    <div class="container mx-auto px-6 pt-4 pb-8 flex justify-between items-center text-sm text-gray-600">
+      <div>
+        Made with <span class="text-pink-500">❤️</span> by <span class="font-medium text-gray-800">Abid</span>
+      </div>
+  
+      <div class="flex space-x-4">
+        <a href="#" class="hover:underline">Privacy Policy</a>
+        <a href="#" class="hover:underline">Terms of Service</a>
+        <a href="#" class="hover:underline">Cookies Settings</a>
+      </div>
+    </div>
+  </footer>
+  
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
