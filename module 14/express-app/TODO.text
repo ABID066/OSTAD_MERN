@@ -1,0 +1,31 @@
+1. Project File Folders
+2. Project NPM Packages
+3. App.js Configurations
+4. JWT Token Encode Function
+        - KEY
+        - EXPIRE
+        - PAYLOAD
+        - SIGN
+        - sign(PAYLOAD,KEY,EXPIRE)
+
+6.  JWT Token Decode Function
+        - KEY
+        - token
+        - verify(token,KEY)
+
+7. Why JWT Encode Decode
+        - User Token Auth
+        - Secure JSON Data Transformation
+
+
+8. CSR (Client-side rendering)
+
+
+9. SSR (Server-side rendering)
+
+10. CSR-SSR Advantages Disadvantages
+
+11. THE OPTMIZED SOLUTION
+
+
+
