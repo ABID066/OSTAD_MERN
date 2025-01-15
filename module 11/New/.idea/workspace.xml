@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a4bf46c-5479-4808-b2f7-f4f11c6681af" name="Changes" comment="" />
+    <list default="true" id="1a4bf46c-5479-4808-b2f7-f4f11c6681af" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +30,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/ABID066/OSTAD_MERN.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/ABID066/OSTAD_MERN&quot;,
     &quot;accountId&quot;: &quot;8f2feb22-88aa-41a5-b5ca-39880a3022f3&quot;
   }
 }</component>
@@ -44,10 +46,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Node.js.index.js.executor": "Run",
     "Node.js.overloadingConcept.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "5a996107",
-    "last_opened_file_path": "D:/OSTAD/module 11/New",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/OSTAD/module 13/New",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -73,6 +76,8 @@
       <updated>1736667053239</updated>
       <workItem from="1736667054255" duration="934000" />
       <workItem from="1736695775910" duration="5218000" />
+      <workItem from="1736704166741" duration="390000" />
+      <workItem from="1736842628423" duration="1229000" />
     </task>
     <servers />
   </component>
