@@ -80,6 +80,8 @@ app.get('/url', function (req, res) {
     res.end(firstName+ " " + lastName);
     //URL should be : /url?firstName=Md&lastName=Abid
 })
+
+
 app.get('/header', function (req, res) {
     let firstName = req.header('firstName');
     let lastName = req.header('lastName');

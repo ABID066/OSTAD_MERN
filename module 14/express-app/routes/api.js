@@ -15,24 +15,6 @@ router.get("/feature2/TokenDecode",FeaturesController.TokenDecode)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 router.get("/feature3/Email",FeaturesController.Email)
 
 router.get("/feature4/Profile",authMiddleware,FeaturesController.Profile)
