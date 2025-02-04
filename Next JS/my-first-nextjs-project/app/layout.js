@@ -8,7 +8,7 @@ export default function RootLayout({ children }) {
       <body>
         {children}
         <ProgressBar
-            height="4px"
+            height="2px"
             color="#000d00"
             options={{ showSpinner: false }}
         />
