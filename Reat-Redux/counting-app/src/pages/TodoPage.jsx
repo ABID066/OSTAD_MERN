@@ -1,7 +1,7 @@
 
 import CreateTodo from "../components/todo/CreateTodo.jsx";
 import TodoList from "../components/todo/TodoList.jsx";
-import "../assets/css/todo.css"
+
 
 const TodoPage = () => {
     return (
