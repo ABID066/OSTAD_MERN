@@ -1,11 +1,16 @@
-import {Fragment} from 'react';
+import {Fragment, lazy, Suspense} from 'react';
 import MasterLayout from "../components/masterLayout/Master-layout.jsx";
+import LazyLoader from "../components/masterLayout/LazyLoader.jsx";
+
+const InProgress = lazy(() => import("../components/InProgress/InProgress.jsx"));
 
 const InProgressPage = () => {
     return (
         <Fragment>
             <MasterLayout>
-                Page
+                <Suspense fallback={<LazyLoader/>}>
+                    <InProgress/>
+                </Suspense>
             </MasterLayout>
         </Fragment>
     );

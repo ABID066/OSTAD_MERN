@@ -1,11 +1,16 @@
-import React, {Fragment} from 'react';
+import {Fragment, lazy, Suspense} from 'react';
 import MasterLayout from "../components/masterLayout/Master-layout.jsx";
+import LazyLoader from "../components/masterLayout/LazyLoader.jsx";
+
+const Completed = lazy(() => import("../components/Completed/Completed.jsx"));
 
 const CompletedPage = () => {
     return (
         <Fragment>
             <MasterLayout>
-                Page
+                <Suspense fallback={<LazyLoader/>}>
+                    <Completed/>
+                </Suspense>
             </MasterLayout>
         </Fragment>
     );

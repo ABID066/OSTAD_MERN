@@ -3,7 +3,7 @@ import React from 'react';
 const Canceled = () => {
     return (
         <div>
-
+            <h1>Canceled</h1>
         </div>
     );
 };

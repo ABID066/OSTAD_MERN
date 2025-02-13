@@ -1,10 +1,15 @@
-import React from 'react';
+import {Fragment, lazy, Suspense} from 'react';
+import LazyLoader from "../components/masterLayout/LazyLoader.jsx";
+
+const Profile = lazy(() => import("../components/Profile/Profile.jsx"));
 
 const ProfilePage = () => {
     return (
-        <div>
-            
-        </div>
+        <Fragment>
+            <Suspense fallback={<LazyLoader/>}>
+                <Profile/>
+            </Suspense>
+        </Fragment>
     );
 };
 
