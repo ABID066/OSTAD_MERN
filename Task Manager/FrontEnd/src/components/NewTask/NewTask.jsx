@@ -1,8 +1,18 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useEffect} from 'react';
 import {Container} from "react-bootstrap";
 import {AiOutlineCalendar, AiOutlineDelete, AiOutlineEdit} from "react-icons/ai";
+import {TaskListByStatus} from "../../APIRequest/APIRequest.js";
+import {useSelector} from "react-redux";
 
 const NewTask = () => {
+
+    useEffect(
+        ()=>{
+            TaskListByStatus("New");
+        },[]
+    )
+    const NewList = useSelector((state)=>state.task.New)
+
     return (
         <Fragment>
             <Container fluid={true} className="content-body">
@@ -24,18 +34,17 @@ const NewTask = () => {
 
                 <div className="row p-0 m-0">
                     {/** Assuming items are mapped from a data array */}
-                    {[{ title: "Title", description: "Description", createdDate: "2024-02-14", status: "New" },
-                        { title: "Title", description: "Description", createdDate: "2024-02-14", status: "New" }].map((item, index) => (
+                    {NewList.map((item, index) => (
                         <div key={index} className="col-12 col-lg-4 col-sm-6 col-md-4 p-2">
                             <div className="card h-100">
                                 <div className="card-body">
-                                    <h6 className="animated fadeInUp">{item.title}</h6>
-                                    <p className="animated fadeInUp">{item.description}</p>
+                                    <h6 className="animated fadeInUp">{item["title"]}</h6>
+                                    <p className="animated fadeInUp">{item["description"]}</p>
                                     <p className="m-0 animated fadeInUp p-0">
-                                        <AiOutlineCalendar /> {item.createdDate}
+                                        <AiOutlineCalendar /> {item["createDate"]}
                                         <a className="icon-nav text-primary mx-1"><AiOutlineEdit /></a>
                                         <a className="icon-nav text-danger mx-1"><AiOutlineDelete /></a>
-                                        <a className="badge float-end bg-info">{item.status}</a>
+                                        <a className="badge float-end bg-info">{item["status"]}</a>
                                     </p>
                                 </div>
                             </div>
