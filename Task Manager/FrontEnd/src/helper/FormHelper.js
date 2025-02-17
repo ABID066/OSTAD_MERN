@@ -1,11 +1,37 @@
-import React from 'react';
+import toast from "react-hot-toast";
 
-const FormHelper = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
+let EmailRegx = /\S+@\S+\.\S+/;
+let MobileRegx = /(^(\+88|0088)?(01){1}[3456789]{1}(\d){8})$/;
 
-export default FormHelper;
+
+class FormHelper {
+
+    IsEmpty(value) {
+        return value.length === 0;
+    }
+
+    IsMobile(value) {
+        return MobileRegx.test(value);
+    }
+
+    IsEmail(value) {
+        return !EmailRegx.test(value);
+    }
+
+    ErrorToast(msg) {
+        toast.error(msg, {position: "bottom-center"});
+    }
+
+    SuccessToast(msg) {
+        toast.success(msg, {position: "bottom-center"});
+    }
+}
+
+export const {
+    IsEmpty,
+    IsMobile,
+    IsEmail,
+    ErrorToast,
+    getBase64,
+    SuccessToast
+} = new FormHelper();

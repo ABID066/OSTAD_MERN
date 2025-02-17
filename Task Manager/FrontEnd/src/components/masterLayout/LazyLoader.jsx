@@ -5,7 +5,7 @@ const LazyLoader = () => {
     return (
         <div>
             <Fragment>
-                <div className={" LoadingOverlay d-none"}>
+                <div className={" LoadingOverlay "}>
                     <div className="Line-Progress">
                         <div className="indeterminate"></div>
                     </div>
