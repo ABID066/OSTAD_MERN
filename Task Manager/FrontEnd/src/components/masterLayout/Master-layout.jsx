@@ -5,7 +5,7 @@ import {AiOutlineCheckCircle, AiOutlineEdit, AiOutlineLogout, AiOutlineMenuUnfol
 import {BsHourglass, BsListNested} from "react-icons/bs";
 import logo from "../../assets/img/logo.svg";
 import {MdOutlineCancelPresentation, MdOutlineDashboard} from "react-icons/md";
-//import {getUserDetails, removeSessions} from "../../helper/SessionHelper";
+import {getUserDetails, removeSession} from "../../helper/SessionHelper.js";
 
 
 
@@ -14,7 +14,7 @@ const MasterLayout = (props) => {
     let contentRef,sideNavRef=useRef();
 
     const onLogout=()=>{
-        //removeSessions();
+        removeSession();
     }
 
     const MenuBarClickHandler = () => {
@@ -46,11 +46,11 @@ const MasterLayout = (props) => {
 
                     <div className="float-right h-auto d-flex">
                         <div className="user-dropdown">
-                            <img className="icon-nav-img icon-nav" src="https://cdn.ostad.app/user/avatar/2025-01-17T16-36-28.055Z-photo_2023-10-06_15-21-45.jpg" alt="user"/>
+                            <img className="icon-nav-img icon-nav" src={getUserDetails()["photo"]} alt="user"/>
                             <div className="user-dropdown-content ">
                                 <div className="mt-4 text-center">
-                                    <img className="icon-nav-img" src="https://cdn.ostad.app/user/avatar/2025-01-17T16-36-28.055Z-photo_2023-10-06_15-21-45.jpg" alt="user"/>
-                                    <h6>MD ABID</h6>
+                                    <img className="icon-nav-img"  src={getUserDetails()["photo"]} alt="user"/>
+                                    <h6>{getUserDetails()["firstName"]} {getUserDetails()["lastName"]} </h6>
                                     <hr className="user-dropdown-divider  p-0"/>
                                 </div>
                                 <NavLink to="/profile" className="side-bar-item">

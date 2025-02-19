@@ -1,11 +1,23 @@
-import React from 'react';
+import Swal from "sweetalert2";
+import { StatusUpdate } from "../APIRequest/APIRequest.js";
 
-const UpdateAlert = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
+export async function UpdateAlert(id, status) {
+    const result = await Swal.fire({
+        title: "Change Status",
+        input: "select",
+        inputOptions: {
+            "New": "New",
+            "In Progress": "In Progress",
+            "Completed": "Completed",
+            "Canceled": "Canceled"
+        },
+        inputValue: status,
+        showCancelButton: true,
+        confirmButtonText: "Update",
+        cancelButtonText: "Cancel"
+    });
 
-export default UpdateAlert;
+    if (result.isConfirmed && result.value !== status) {
+        return await StatusUpdate(id, result.value);
+    }
+}

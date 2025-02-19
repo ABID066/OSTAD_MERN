@@ -1,8 +1,10 @@
-import React, {Fragment, useEffect} from 'react';
+import {Fragment, useEffect} from 'react';
 import {Container} from "react-bootstrap";
 import {AiOutlineCalendar, AiOutlineDelete, AiOutlineEdit} from "react-icons/ai";
 import {TaskListByStatus} from "../../APIRequest/APIRequest.js";
 import {useSelector} from "react-redux";
+import {DeleteAlert} from "../../helper/DeleteAlert.js";
+import {UpdateAlert} from "../../helper/UpdateAlert.js";
 
 const NewTask = () => {
 
@@ -12,6 +14,21 @@ const NewTask = () => {
         },[]
     )
     const NewList = useSelector((state)=>state.task.New)
+
+    const DeleteItem=(id)=>{
+        DeleteAlert(id).then((result)=>{
+            if(result===true){
+                TaskListByStatus("New");
+            }
+        })
+    }
+    const ChangeStatusItem=(id,status)=>{
+        UpdateAlert(id,status).then(res=>{
+            if(res===true){
+                TaskListByStatus("New");
+            }
+        })
+    }
 
     return (
         <Fragment>
@@ -42,8 +59,8 @@ const NewTask = () => {
                                     <p className="animated fadeInUp">{item["description"]}</p>
                                     <p className="m-0 animated fadeInUp p-0">
                                         <AiOutlineCalendar /> {item["createDate"]}
-                                        <a className="icon-nav text-primary mx-1"><AiOutlineEdit /></a>
-                                        <a className="icon-nav text-danger mx-1"><AiOutlineDelete /></a>
+                                        <a onClick={ChangeStatusItem.bind(this, item["_id"], item["status"])} className="icon-nav text-primary mx-1"><AiOutlineEdit /></a>
+                                        <a onClick={DeleteItem.bind(this, item["_id"])} className="icon-nav text-danger mx-1"><AiOutlineDelete /></a>
                                         <a className="badge float-end bg-info">{item["status"]}</a>
                                     </p>
                                 </div>

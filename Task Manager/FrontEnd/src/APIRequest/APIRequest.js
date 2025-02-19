@@ -4,6 +4,8 @@ import store from "../redux/store/store.js";
 import { HideLoader, ShowLoader } from "../redux/state-slice/setting-slice.js";
 import {getToken, setToken, setUserDetails} from "../helper/SessionHelper.js";
 import {SetCanceledTask, SetCompletedTask, SetNewTask, SetProgressTask} from "../redux/state-slice/task-slice.js";
+import {SetSummary} from "../redux/state-slice/summary-slice.js";
+import {SetProfile} from "../redux/state-slice/profile-slice.js";
 
 const BaseURL = "https://task-manager-back-end-ivory.vercel.app/api/v1";
 
@@ -125,4 +127,120 @@ export async function TaskListByStatus(Status) {
     } finally {
         store.dispatch(HideLoader());
     }
+}
+
+//task summary
+export async function TaskSummary() {
+
+    store.dispatch(ShowLoader());
+
+    let URL = BaseURL + "/tasks-summary";
+
+    try {
+        let res =await axios.get(URL,AxiHeader());
+        if(res.status === 200) {
+            store.dispatch(SetSummary(res.data["result"]));
+        } else {
+            ErrorToast("Something Went Wrong");
+        }
+
+
+    } catch (err) {
+        ErrorToast("Something Went Wrong");
+    }
+    finally {
+        store.dispatch(HideLoader())
+    }
+
+}
+
+//delete task
+export async function DeleteTask(id) {
+    store.dispatch(ShowLoader());
+
+    let URL = BaseURL + "/delete-task/" + id;
+    try {
+        let res = await axios.get(URL,AxiHeader());
+        if(res.status === 200) {
+            SuccessToast("Delete Successful");
+            return true;
+        }
+        else
+        {
+            ErrorToast("Something Went Wrong");
+            return false;
+        }
+    } catch (err) {
+        ErrorToast("Something Went Wrong");
+        return false;
+    }
+    finally {
+        store.dispatch(HideLoader());
+    }
+}
+
+//status update
+export async function StatusUpdate(id,status){
+    store.dispatch(ShowLoader());
+
+    let URL = BaseURL + "/update-task-status/"+id+"/"+status;
+    try {
+        let res =await axios.get(URL,AxiHeader())
+        if(res.status === 200) {
+            SuccessToast("Status Update successful");
+            return true;
+        } else {
+            ErrorToast("something Went Wrong");
+            return false;
+        }
+    } catch (err) {
+        ErrorToast("Something Went Wrong");
+        return false;
+    } finally {
+        store.dispatch(HideLoader());
+    }
+}
+
+//get profile details
+export async function GetProfileDetails() {
+    store.dispatch(ShowLoader());
+    let URL = BaseURL+ "/profile-details";
+    try {
+        let res = await axios.get(URL,AxiHeader());
+        if(res.status === 200) {
+            store.dispatch(SetProfile(res.data["result"][0]))
+        }
+        else{
+            ErrorToast("something went wrong")
+        }
+    } catch (err) {
+        ErrorToast("Something Went Wrong");
+    } finally {
+        store.dispatch(HideLoader());
+    }
+}
+
+//profile update
+export async function ProfileUpdate(email,firstName,lastName,mobile, password, photo) {
+    store.dispatch(ShowLoader());
+    let URL = BaseURL + "/profile-update";
+    let PostBody = {email,firstName,lastName,mobile, password, photo}
+    let UserDetails ={email,firstName,lastName,mobile, photo}
+    try {
+        let res = await axios.post(URL,PostBody,AxiHeader());
+        if(res.status === 200) {
+            SuccessToast("Profile Update successful");
+            setUserDetails(UserDetails);
+            return true;
+        } else {
+            ErrorToast("Something Went Wrong");
+            return false;
+        }
+    } catch (err) {
+        ErrorToast("Something Went Wrong");
+        return false;
+    } finally {
+        store.dispatch(HideLoader());
+    }
+
 }

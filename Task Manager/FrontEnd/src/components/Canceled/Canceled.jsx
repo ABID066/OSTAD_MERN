@@ -3,6 +3,8 @@ import {AiOutlineCalendar, AiOutlineDelete, AiOutlineEdit} from "react-icons/ai"
 import {Container} from "react-bootstrap";
 import {TaskListByStatus} from "../../APIRequest/APIRequest.js";
 import {useSelector} from "react-redux";
+import {DeleteAlert} from "../../helper/DeleteAlert.js";
+import {UpdateAlert} from "../../helper/UpdateAlert.js";
 
 const Canceled = () => {
     useEffect(
@@ -10,7 +12,24 @@ const Canceled = () => {
             TaskListByStatus("Canceled");
         },[]
     )
+
     const CanceledList = useSelector((state)=>state.task.Canceled)
+
+    const DeleteItem=(id)=>{
+        DeleteAlert(id).then((result)=>{
+            if(result===true){
+                TaskListByStatus("Canceled");
+            }
+        })
+    }
+    const ChangeStatusItem=(id,status)=>{
+        UpdateAlert(id,status).then(res=>{
+            if(res===true){
+                TaskListByStatus("Canceled");
+            }
+        })
+    }
+
     return (
         <Fragment>
             <Container fluid={true} className="content-body">
@@ -40,8 +59,8 @@ const Canceled = () => {
                                     <p className="animated fadeInUp">{item["description"]}</p>
                                     <p className="m-0 animated fadeInUp p-0">
                                         <AiOutlineCalendar /> {item["createDate"]}
-                                        <a className="icon-nav text-primary mx-1"><AiOutlineEdit /></a>
-                                        <a className="icon-nav text-danger mx-1"><AiOutlineDelete /></a>
+                                        <a onClick={ChangeStatusItem.bind(this, item["_id"], item["status"])} className="icon-nav text-primary mx-1"><AiOutlineEdit /></a>
+                                        <a onClick={DeleteItem.bind(this, item["_id"])} className="icon-nav text-danger mx-1"><AiOutlineDelete /></a>
                                         <a className="badge float-end bg-danger">{item["status"]}</a>
                                     </p>
                                 </div>
