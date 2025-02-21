@@ -14,6 +14,9 @@ import ForgetpassPage from "./pages/ForgetpassPage.jsx";
 import FullscreenLoader from "./components/masterLayout/FullScreenLoader.jsx";
 import { getToken } from "./helper/SessionHelper.js";
 
+import VerifyOTPPage from "./pages/AccountRecover/Verify-OTP-Page.jsx";
+import CreatePasswordPage from "./pages/AccountRecover/Create-Password-Page.jsx";
+
 // eslint-disable-next-line react/prop-types
 const ProtectedRoute = ({ children }) => {
     return getToken() ? children : <Navigate to="/login" replace />;
@@ -34,7 +37,10 @@ const App = () => {
 
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/registration" element={<RegistrationPage />} />
-                    <Route path="/forgetpass" element={<ForgetpassPage />} />
+
+                    <Route path="/forget-password" element={<ForgetpassPage />} />
+                    <Route path="/verify-otp" element={<VerifyOTPPage/>}/>
+                    <Route path="/create-password" element={<CreatePasswordPage />}/>
 
                     <Route path="*" element={<Page404/>} />
                 </Routes>

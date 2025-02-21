@@ -72,7 +72,7 @@ const Registration = () => {
                                     Sign In
                                 </Link>
                                 <br />
-                                <Link className="text-center" to="/forgetpass">
+                                <Link className="text-center" to="/forget-password">
                                     Forgot Password?
                                 </Link>
                             </div>

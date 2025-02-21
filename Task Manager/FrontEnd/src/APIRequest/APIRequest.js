@@ -2,7 +2,7 @@ import { ErrorToast, SuccessToast } from "../helper/FormHelper.js";
 import axios from "axios";
 import store from "../redux/store/store.js";
 import { HideLoader, ShowLoader } from "../redux/state-slice/setting-slice.js";
-import {getToken, setToken, setUserDetails} from "../helper/SessionHelper.js";
+import {getToken, setEmail, setOTP, setToken, setUserDetails} from "../helper/SessionHelper.js";
 import {SetCanceledTask, SetCompletedTask, SetNewTask, SetProgressTask} from "../redux/state-slice/task-slice.js";
 import {SetSummary} from "../redux/state-slice/summary-slice.js";
 import {SetProfile} from "../redux/state-slice/profile-slice.js";
@@ -243,4 +243,77 @@ export async function ProfileUpdate(email,firstName,lastName,mobile, password, p
         store.dispatch(HideLoader());
     }
 
+}
+
+//Recovery section 01: Verify Email
+export async function VerifyEmailRequest(email){
+    store.dispatch(ShowLoader());
+
+    let URL = BaseURL + "/verify-user/"+ email;
+    try {
+        let res = await axios.get(URL);
+        if(res.status === 200) {
+            if(res.data["status"]==="success"){
+                setEmail(email);
+                return true;
+            }
+            else{
+                ErrorToast("User Not Found");
+                return false;
+            }
+        }
+    } catch (err) {
+        ErrorToast("Something Went Wrong");
+        return false;
+    } finally {
+        store.dispatch(HideLoader());
+    }
+}
+
+//Recovery section 02: Verify OTP
+export async function VerifyOTPRequest(email,OTP){
+    store.dispatch(ShowLoader());
+    let URL = BaseURL + "/verify-otp/"+email+"/"+OTP;
+    try {
+        let res = await axios.get(URL);
+        if(res.status === 200) {
+            if(res.data["status"]==="success"){
+                setOTP(OTP);
+                return true;
+            }
+            else{
+                ErrorToast("Invalid OTP");
+                return false;
+            }
+        }
+    } catch (err) {
+        ErrorToast("Something Went Wrong");
+        return false;
+    } finally {
+        store.dispatch(HideLoader());
+    }
+}
+
+////Recovery section 03: Reset Password
+export async function ResetPasswordRequest(email,OTP, password){
+    store.dispatch(ShowLoader());
+    let URL = BaseURL + "/reset-password"
+    let PostBody = {email,OTP,password};
+    try {
+        let res= await axios.post(URL,PostBody);
+        if(res.status === 200) {
+            if(res.data["status"]==="success"){
+                return true;
+            }
+            else{
+                ErrorToast("Invalid OTP");
+                return false;
+            }
+        }
+    } catch (err) {
+        ErrorToast("Something Went Wrong");
+        return false;
+    } finally {
+        store.dispatch(HideLoader());
+    }
 }

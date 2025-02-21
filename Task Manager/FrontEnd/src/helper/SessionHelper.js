@@ -16,5 +16,17 @@ class SessionHelper{
         localStorage.clear();
         window.location.href="/login";
     }
+    setEmail(email){
+        localStorage.setItem('Email', email);
+    }
+    getEmail(){
+        return localStorage.getItem('Email');
+    }
+    setOTP(otp){
+        localStorage.setItem('OTP', otp);
+    }
+    getOTP(){
+        return localStorage.getItem('OTP');
+    }
 }
-export const {setToken, getToken, setUserDetails, getUserDetails, removeSession} =new SessionHelper;
+export const {setToken, getToken, setOTP, getOTP, setEmail, getEmail, setUserDetails, getUserDetails, removeSession} =new SessionHelper;
