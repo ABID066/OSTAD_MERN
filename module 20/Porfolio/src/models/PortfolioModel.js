@@ -1,13 +1,13 @@
 const mongoose = require('mongoose')
 const DataSchema= new mongoose.Schema({
-    email:{ type:String,unique:true,required:true },
-    firstName:{ type:String,required:true},
-    lastName:{ type:String,required:true},
-    password:{ type:String,required:true},
-    mobile:{ type:String,required:true},
-    photo:{ type:String}
+    email:{type:String,required:true},
+    title:{ type:String, required:true},
+    description:{ type:String,required:true},
+    img:{ type:String,required:true},
+    codeLink:{ type:String,required:true},
+    liveLink:{ type:String,required:true},
 
 },{timestamps: true, versionKey:false});
 
-const UserModel = mongoose.model("users",DataSchema);
-module.exports = UserModel;
+const PortfolioModel = mongoose.model("portfolios",DataSchema);
+module.exports = PortfolioModel;

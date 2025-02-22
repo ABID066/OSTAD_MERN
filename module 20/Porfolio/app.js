@@ -32,23 +32,13 @@ app.use(limiter);
 app.use(bodyParser.json())
 
 //Database connection
-
-//let URL= process.env.URL;
-let URL ="mongodb+srv://abidAdmin:1234@cluster0.z72chbc.mongodb.net/PortfolioAssignment"
+let URL= process.env.URL;
 let OPTION = {user:"", autoIndex: true}
 mongoose.connect(URL, OPTION).then((res)=>{
     console.log("Database Connected")
 }).catch((err)=>{
     console.log(err)
 })
-/*
-let OPTION = {user:"", autoIndex: true}
-mongoose.connect(URL, OPTION).then((res)=>{
-    console.log("Database Connected")
-}).catch((err)=>{
-    console.log(err)
-})
-*/
 
 app.use("/api/v1",router)
 
