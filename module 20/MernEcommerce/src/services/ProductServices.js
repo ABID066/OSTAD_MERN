@@ -7,16 +7,30 @@ const ReviewModel = require("../models/ReviewModel.js");
 
 
 const BrandListService = async ()=>{
-
-
+    try {
+        let data= await BrandModel.find();
+        return {status: "success", data: data}
+    } catch (err) {
+        return {status: "error", data: err}.toString()
+    }
 }
 
 const CategoryListService = async (req, res) => {
-
+    try {
+        let data= await CategoryModel.find();
+        return {status: "success", data: data}
+    } catch (err) {
+        return {status: "error", data: err}.toString()
+    }
 }
 
 const SliderListService = async (req, res) => {
-
+    try {
+        let data= await ProductSliderModel.find();
+        return {status: "success", data: data}
+    } catch (err) {
+        return {status: "error", data: err}.toString()
+    }
 }
 
 const ListByBrandService = async (req, res) => {
@@ -44,6 +58,7 @@ const DetailsService = async (req, res) => {
 }
 
 const ReviewListService = async (req, res) => {
+
 
 }
 

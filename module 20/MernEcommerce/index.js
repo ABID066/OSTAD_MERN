@@ -1,4 +1,5 @@
 const app = require("./app");
-app.listen(8080, function () {
-    console.log("Server started on port 8080");
+
+app.listen(6040, function () {
+    console.log("Server started on port 6040");
 })

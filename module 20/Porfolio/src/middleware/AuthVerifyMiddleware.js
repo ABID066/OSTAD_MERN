@@ -8,7 +8,7 @@ exports.AuthVerify=(req,res,next)=>{
             res.status(401).json({status:"Invalid Token",message:err.toString()});
         }
         else {
-            req.headers.email=decoded["data"];
+            req.headers.email=decoded["email"];
             next();
         }
     })

@@ -45,7 +45,7 @@ exports.readOnePortfolio = async (req, res) => {
             return res.status(404).json({ status: "fail", message: "Portfolio not found" });
         }
 
-        res.json({ status: "success", message: data });
+        res.status(200).json({ status: "success", message: data });
 
     } catch (err) {
         res.status(400).json({ status: "fail", message: err.toString() });
@@ -54,25 +54,40 @@ exports.readOnePortfolio = async (req, res) => {
 
 
 //update
-exports.updatePortfolio=async (req,res)=>{
+exports.updatePortfolio = async (req, res) => {
     try {
-        let email= req.headers["email"]
+        let email = req.headers["email"];
         let { id } = req.params;
-        await PortfolioModel.updateOne({_id:id,email:email},req.body);
-        res.json({status:"success",message:"Portfolio updated"});
-    }catch(err){
-        res.json({status:"fail",message:err.toString()});
+
+        let result = await PortfolioModel.updateOne({ _id: id, email: email }, req.body);
+
+        if (result.modifiedCount === 0) {
+            return res.status(404).json({ status: "fail", message: "Portfolio not found or no changes made" });
+        }
+
+        res.status(200).json({ status: "success", message: "Portfolio updated" });
+
+    } catch (err) {
+        res.status(400).json({ status: "fail", message: err.message });
     }
-}
+};
+
 
 //delete
-exports.deletePortfolio=async (req,res)=>{
+exports.deletePortfolio = async (req, res) => {
     try {
-        let email= req.headers["email"]
+        let email = req.headers["email"];
         let { id } = req.params;
-        await PortfolioModel.deleteOne({_id:id,email:email});
-        res.json({status:"success",message:"Portfolio deleted"});
-    }catch(err){
-        res.json({status:"fail",message:err.toString()});
+
+        let result = await PortfolioModel.deleteOne({ _id: id, email: email });
+
+        if (result.deletedCount === 0) {
+            return res.status(404).json({ status: "fail", message: "Portfolio not found" });
+        }
+
+        res.status(200).json({ status: "success", message: "Portfolio deleted" });
+
+    } catch (err) {
+        res.status(400).json({ status: "fail", message: err.message });
     }
-}
+};

@@ -1,13 +1,25 @@
 const UserModel = require("../models/UserModel");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
 
 
 //registration
 exports.UserRegistration = async (req, res) => {
     try {
-        let reqBody = req.body;
-        await UserModel.create(reqBody);
-        res.status(200).json({status: "success", message: "User registration successful"});
+        let { firstName, lastName, email, mobile, password, photo } = req.body;
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        await UserModel.create({
+            firstName,
+            lastName,
+            email,
+            mobile,
+            password: hashedPassword,
+            photo
+        });
+
+        res.status(200).json({ status: "success", message: "User registration successful" });
     } catch (err) {
         res.status(400).json({status: "fail", message: err.toString()});
     }
@@ -16,26 +28,32 @@ exports.UserRegistration = async (req, res) => {
 //login
 exports.UserLogin = async (req, res) => {
     try {
-        let reqBody = req.body;
+        let { email, password } = req.body;
 
-        let data = await UserModel.aggregate([
-            { $match: reqBody },
-            { $project: { _id: 0, email: 1, firstName: 1, lastName: 1, mobile: 1 ,photo: 1} }
-        ]);
+        let user = await UserModel.findOne({ email }).select("email firstName lastName mobile photo password");
 
-        if (data.length === 0) {
-            return res.status(401).json({ status: "unauthorized" });
+
+        if (!user) {
+            return res.status(401).json({ status: "unauthorized", message: "Invalid email" });
+        }
+
+        // Compare hashed password
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return res.status(401).json({ status: "unauthorized", message: "Invalid password" });
         }
 
         // Generate JWT token
         let payload = {
-            exp: Math.floor(Date.now() / 1000) + 24 * 60 * 60, // 1-day expiration
-            data: data[0]["email"]
+            exp: Math.floor(Date.now() / 1000) + 24 * 60 * 60, // Expires in 1 day
+            email: user.email
         };
         let token = jwt.sign(payload, process.env.JWT_SECRET);
 
-        // Send response
-        res.status(200).json({status: "success", token: token, data: data[0]});
+        // Remove password before sending response
+        const { password: _, ...userData } = user.toObject();
+
+        res.status(200).json({ status: "success", token: token, data: userData });
 
     } catch (err) {
         res.status(400).json({status: "fail", message: err.message});

@@ -13,6 +13,7 @@ router.get('/ProductListBySmilier/:Keyword',ProductController.ProductListBySmili
 router.get('/ProductListByKeyword/:keyword',ProductController.ProductListByKeyword)
 router.get('/ProductListByRemark/:Remark',ProductController.ProductListByRemark)
 router.get('/ProductDetails/:ProductID',ProductController.ProductDetails)
-router.get('/ProductBrandList/:ProductID',ProductController.ProductReviewList)
+//router.get('/ProductBrandList/:ProductID',ProductController)
+router.get('/ProductReviewList/:ProductID',ProductController.ProductReviewList)
 
 module.exports = router;

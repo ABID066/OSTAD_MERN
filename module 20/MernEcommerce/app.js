@@ -1,3 +1,5 @@
+
+
 const express = require('express');
 const router = require('./src/routes/api');
 const app = express();
@@ -27,7 +29,7 @@ let limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 3000 });
 app.use(limiter);
 
 // Mongoose
-let URL = 'mongodb+srv://abidAdmin:1234@cluster0.z72chbc.mongodb.net/MernEcommerce?retryWrites=true&w=majority';
+let URL = 'mongodb+srv://abidAdmin:1234@cluster0.z72chbc.mongodb.net/Ecommerce';
 let OPTION = { user: '', autoIndex: true };
 mongoose.connect(URL, OPTION)
     .then(() => {
@@ -44,13 +46,5 @@ try {
     console.error('Error with router:', err);
 }
 
-
-
-app.use(express.static('client/dist'));
-
-// Add React Front End Routing
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
-});
 
 module.exports = app;
