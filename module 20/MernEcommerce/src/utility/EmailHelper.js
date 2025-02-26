@@ -1,26 +1,38 @@
-const nodemailer = require('nodemailer');
 
+const nodemailer = require("nodemailer");
 
-
-const EmailSend = async (EmailTo, EmailText, EmailSubject)=>{
-
-    let transport = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        secure: false,
+const EmailSend = async (email, OTP) => {
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
         auth: {
             user: "mdabid1152@gmail.com",
-            pass: ""
-        }
-    })
+            pass: 'glil tckm omuw bvyy'
+        },
+    });
 
-    let mailOption = {
-        from: "Practice Ecommerce <mdabid1152@gmail.com>",
-        to: EmailTo,
-        subject: EmailSubject,
-        text: EmailText,
-        html: EmailSubject,
+    let mailHTML = `
+        <div style="font-family: Arial, sans-serif; text-align: center; padding: 20px;">
+            <h2 style="color: #333;">Task Manager OTP Verification</h2>
+            <p>Hello,</p>
+            <p>Use the following OTP to verify your email address:</p>
+            <p style="font-size: 22px; font-weight: bold; color: #d32f2f; background: #f8d7da; padding: 10px; display: inline-block; border-radius: 5px;">
+                ${OTP}
+            </p>
+            <p>This OTP is valid for 10 minutes. Do not share it with anyone.</p>
+            <p>If you did not request this, please ignore this email.</p>
+            <p style="margin-top: 20px; font-size: 12px; color: #777;">© 2025 Task Manager. All Rights Reserved.</p>
+        </div>
+    `;
 
-    }
-    return await transport.sendMail(mailOption);
-}
-module.exports= EmailSend;
+    let mailOptions = {
+        from: 'Practice Ecommerce <mdabid1152@gmail.com>',
+        to: email,
+        subject: "Email Verification Code",
+        html: mailHTML
+    };
+
+    return await transporter.sendMail(mailOptions);
+
+};
+
+module.exports =  EmailSend;

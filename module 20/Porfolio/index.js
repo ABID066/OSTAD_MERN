@@ -4,5 +4,5 @@ const dotenv = require("dotenv")
 dotenv.config({ path: "./.env" })
 
 app.listen(process.env.RUNNING_PORT, function (){
-    console.log("Runnig at "+process.env.RUNNING_PORT);
+    console.log("Running at "+process.env.RUNNING_PORT);
 });
