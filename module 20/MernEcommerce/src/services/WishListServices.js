@@ -52,29 +52,31 @@ const WishListServices = async (req) => {
 
 const SaveWishListServices = async (req) => {
     try {
-        
-        let user_id = req.headers['user_id']
-        
-        if (!user_id) return { status: "fail", message: "User ID is required" };
+        let userID = req.headers['user_id'];
 
-        let reqBody = req.body;
-        reqBody.userID = user_id;
+        if (!userID) {
+            return { status: "fail", message: "User ID is required" };
+        }
 
-        let data = await WishModel.updateOne(query, {$set:reqBody}, {upsert:true} )
+        let reqBody = { ...req.body, userID }; // Prevent direct mutation
 
-        return {status: "success", message: "Added to the wishlist", data: data};
+        let data = await WishModel.updateOne({ userID }, { $set: reqBody }, { upsert: true });
+
+        return { status: "success", message: "Added to the wishlist", data };
     } catch (err) {
-        return {status: "error", data: err}
+        return { status: "error", message: err.message };
     }
-}
+};
+
 
 const RemoveWishListServices = async (req) => {
     try {
         let user_id = req.headers.user_id;
         let reqBody = req.body;
-        reqBody.user_id = user_id;
+        reqBody.userID = user_id;
         let data = await WishModel.deleteOne(reqBody)
-        return {status: "success", message: "Added to the wishlist", data: data};
+
+        return {status: "success", message: "Remove from wishlist", data: data};
     } catch (err) {
         return {status: "error", data: err}
     }

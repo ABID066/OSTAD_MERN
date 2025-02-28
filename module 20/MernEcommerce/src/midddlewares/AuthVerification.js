@@ -4,13 +4,13 @@ module.exports = (req, res, next)=>{
     let token= req.headers["token"]
     if(!token){
         token = req.cookies["token"]
-
     }
+
     let decoded = DecodeToken(token)
 
     if(decoded===null){
-        console.error("No token provided");
-        return res.status(401).json({status:"fail",message:"Unauthorized"});
+        console.error("No token provided 2");
+        return res.status(401).json({status:"fail",message:"Unauthorized2"});
     } else {
         let email= decoded.email;
         let user_id=decoded.user_id;
