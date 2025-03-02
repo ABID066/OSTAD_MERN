@@ -27,7 +27,8 @@ exports.UserLogin = async (req, res) => {
     try {
         let { email, password } = req.body;
 
-        let user = await UserModel.findOne({ email }).select("email firstName lastName mobile photo password");
+        let user = await UserModel.findOne({ email
+        }).select("email firstName lastName mobile photo password");
 
         if (!user) {
             return res.status(401).json({ status: "unauthorized", message: "Invalid email" });
