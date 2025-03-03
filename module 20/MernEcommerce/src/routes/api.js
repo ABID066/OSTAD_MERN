@@ -6,6 +6,7 @@ const router = express.Router();
 const AuthVerification = require("../midddlewares/AuthVerification");
 const CartController = require("../controllers/CartListController");
 const InvoiceController = require("../controllers/InvoiceController");
+const {FeaturesList} = require("../controllers/FeaturesController");
 
 
 
@@ -47,13 +48,20 @@ router.get("/CartLists",AuthVerification,CartController.CartList)
 
 
 //Invoice & Payment
-router.get("/CreateInvoice",AuthVerification,InvoiceController.CreateInvoice)
+router.post("/CreateInvoice",AuthVerification,InvoiceController.CreateInvoice)
 router.get("/InvoiceList",AuthVerification,InvoiceController.InvoiceList)
-router.get("/InvoiceProductList/invoiceID",AuthVerification,InvoiceController.InvoiceProductList)
+router.get("/InvoiceProductList/:invoiceID",AuthVerification,InvoiceController.InvoiceProductList)
 
 router.post("/PaymentSuccess/:trxID",AuthVerification,InvoiceController.PaymentSuccess)
 router.post("/PaymentCancel/:trxID",AuthVerification,InvoiceController.PaymentCancel)
 router.post("/PaymentFail/:trxID",AuthVerification,InvoiceController.PaymentFail)
 router.post("/PaymentIPN/:trxID",AuthVerification,InvoiceController.PaymentIPN)
+
+
+//FeatureList
+router.get("/FeaturesList", FeaturesList)
+
+//Create Review
+router.post("/CreateReview", AuthVerification,ProductController.CreateReview)
 
 module.exports = router;
