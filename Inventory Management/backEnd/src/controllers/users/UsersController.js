@@ -28,12 +28,10 @@ exports.ProfileDetails=async (req, res) => {
     res.status(200).json(Result);
 }
 
-
 exports.RecoverVerifyEmail=async (req,res)=>{
     let Result=await UserVerifyEmailService(req,DataModel,OTPModel);
     res.status(200).json(Result);
 }
-
 
 exports.RecoverVerifyOTP=async (req,res)=>{
     let Result=await UserVerifyOtpService(req,OTPModel);
