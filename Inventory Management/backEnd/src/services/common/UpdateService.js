@@ -8,7 +8,6 @@ const UpdateService = async (req, DataModel) => {
         let data = await DataModel.updateOne({_id:id, email:email}, PostBody);
         return {status:"success", data: data}
     } catch (e) {
-
         return { status: "fail", message: e.toString() };
     }
 }

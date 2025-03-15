@@ -1,5 +1,5 @@
-const DataModel = require('../../models/UserModel');
-const OTPModel = require('../../models/OTPModel');
+const DataModel = require('../../models/Users/UserModel');
+const OTPModel = require('../../models/Users/OTPModel');
 const UserCreateService = require("../../services/user/UserCreateService");
 const UserLoginService = require("../../services/user/UserLoginService");
 const UserResetPassService = require("../../services/user/UserResetPassService");

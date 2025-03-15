@@ -1,4 +1,5 @@
-const ListService = async (req, DataModel, SearchArray) => {
+
+const ListOneJoinService = async (req, DataModel, SearchArray, JoinStage) => {
     try {
         let pageNo = parseInt(req.params.pageNO, 10);
         let perPage = parseInt(req.params.perPage, 10);
@@ -17,6 +18,7 @@ const ListService = async (req, DataModel, SearchArray) => {
 
             data = await DataModel.aggregate([
                 { $match: { email: email } },
+                JoinStage,
                 { $match: SearchQuery },
                 {
                     $facet: {
@@ -28,6 +30,7 @@ const ListService = async (req, DataModel, SearchArray) => {
         } else {
             data = await DataModel.aggregate([
                 { $match: { email: email } },
+                JoinStage,
                 {
                     $facet: {
                         Total: [{ $count: "count" }],
@@ -43,4 +46,4 @@ const ListService = async (req, DataModel, SearchArray) => {
     }
 };
 
-module.exports = ListService;
+module.exports = ListOneJoinService;

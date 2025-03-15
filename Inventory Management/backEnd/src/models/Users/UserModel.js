@@ -8,7 +8,7 @@ const DataSchema= new mongoose.Schema({
     photo:{ type:String},
     createdAt:{ type:Date,default:Date.now},
 
-},{versionKey:false});
+},{timestamps: true, versionKey:false});
 
 const UserModel = mongoose.model("users",DataSchema);
 module.exports = UserModel;
