@@ -1,28 +1,31 @@
-const ReturnProductsModel = require("../../models/Returns/ReturnProductsModel");
+const ReturnsModel = require("../../models/Returns/ReturnsModel");
 
-const ReturnReportService = async (req) => {
+const ReturnSummaryService = async (req) => {
     try {
         let email = req.headers["email"];
-        let FromDate = req.body["fromDate"];
-        let ToDate = req.body["toDate"];
 
-        let data = await ReturnProductsModel.aggregate([
-            {$match: {email: email, createdAt:{$gte: new Date(FromDate), $lte: new Date(ToDate)}}},
+        let data = await ReturnsModel.aggregate([
+            {$match: {email: email}},
             {
                 $facet: {
                     Total: [{
                         $group:{
-                            _id:0,
-                            TotalAmount:{$sum:"$total"}
+                            _id: null,
+                            TotalAmount:{$sum:"$grandTotal"}
+                        }
+                    },{
+                        $project: {
+                            _id: 0,
+                            TotalAmount: { $ifNull: ["$TotalAmount", 0] } // ✅ Ensures a result even if empty
                         }
                     }],
-                    Rows:[
-                        {$lookup: {from: "products", localField: "productID", foreignField: "_id", as: "product"}},
-                        {$unwind: "$product"},
-                        {$lookup: {from: "brands", localField: "product.brandID", foreignField: "_id", as: "brand"}},
-                        {$lookup: {from: "categories", localField: "product.categoryID", foreignField: "_id", as: "category"}},
-                        {$unwind: "$brand"},
-                        {$unwind: "$category"}
+                    Last30Days: [
+                        {$group:{
+                                _id:{$dateToString: {format: "%Y-%m-%d", date: "$createdAt"}},
+                                TotalAmount:{$sum:"$grandTotal"}
+                            }},
+                        {$sort: {_id:-1}},
+                        {$limit: 30}
                     ]
                 }
             }
@@ -33,4 +36,4 @@ const ReturnReportService = async (req) => {
     }
 }
 
-module.exports = ReturnReportService;
+module.exports = ReturnSummaryService;

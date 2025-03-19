@@ -2,6 +2,7 @@ const CreateParentChildService = require("../../services/common/CreateParentChil
 const ListOneJoinService = require("../../services/common/ListOneJoinService");
 const ParentModel = require("../../models/Returns/ReturnsModel");
 const ChildrenModel = require("../../models/Returns/ReturnProductsModel");
+const DeleteParentChildService = require("../../services/common/DeleteParentChildService");
 
 exports.CreateReturns = async (req, res) => {
     let result= await CreateParentChildService(req, ParentModel, ChildrenModel, "returnID");
@@ -15,5 +16,10 @@ exports.ReturnList = async (req, res) => {
     let SearchArray = [{note: SearchRgx},{"customers.customer_name": SearchRgx},{"customers.customer_address": SearchRgx},{"customers.customer_phone": SearchRgx},{"customers.customer_email": SearchRgx}];
 
     let result = await ListOneJoinService(req,ParentModel,SearchArray,JoinStage);
+    res.status(200).send(result);
+}
+
+exports.ReturnDelete = async (req, res) => {
+    let result = await DeleteParentChildService(req, ParentModel, ChildrenModel, "returnID");
     res.status(200).send(result);
 }

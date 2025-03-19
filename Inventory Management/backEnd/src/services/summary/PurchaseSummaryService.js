@@ -1,65 +1,35 @@
-const PurchaseProductsModel = require("../../models/Purchases/PurchaseProductsModel");
+const PurchasesModel = require("../../models/Purchases/PurchasesModel");
 
-const PurchaseReportService = async (req) => {
+const PurchaseSummaryService = async (req) => {
     try {
         let email = req.headers["email"];
-        let FromDate = req.body["fromDate"];
-        let ToDate = req.body["toDate"];
 
-        let data = await PurchaseProductsModel.aggregate([
-            {
-                $match: {
-                    email: email,
-                    createdAt: { $gte: new Date(FromDate), $lte: new Date(ToDate) }
-                }
-            },
+        let data = await PurchasesModel.aggregate([
+            {$match: {email: email}},
             {
                 $facet: {
-                    Total: [
-                        {
-                            $group: {
-                                _id: null,
-                                TotalAmount: { $sum: "$total" }
-                            }
-                        },
-                        {
-                            $project: {
-                                _id: 0,
-                                TotalAmount: { $ifNull: ["$TotalAmount", 0] } // ✅ Ensure non-empty result
-                            }
+                    Total: [{
+                        $group:{
+                            _id: null,
+                            TotalAmount:{$sum:"$grandTotal"}
                         }
-                    ],
-                    Rows: [
-                        {
-                            $lookup: {
-                                from: "products",
-                                localField: "productID",
-                                foreignField: "_id",
-                                as: "product"
-                            }
-                        },
-                        { $unwind: { path: "$product", preserveNullAndEmptyArrays: true } }, // ✅ Prevent data loss
-                        {
-                            $lookup: {
-                                from: "brands",
-                                localField: "product.brandID",
-                                foreignField: "_id",
-                                as: "brand"
-                            }
-                        },
-                        {
-                            $lookup: {
-                                from: "categories",
-                                localField: "product.categoryID",
-                                foreignField: "_id",
-                                as: "category" // ✅ Use a different alias
-                            }
-                        },{$unwind: "$brand"},
-                        {$unwind: "$category"}
+                    },{
+                        $project: {
+                            _id: 0,
+                            TotalAmount: { $ifNull: ["$TotalAmount", 0] } // ✅ Ensures a result even if empty
+                        }
+                    }],
+                    Last30Days: [
+                        {$group:{
+                                _id:{$dateToString: {format: "%Y-%m-%d", date: "$createdAt"}},
+                                TotalAmount:{$sum:"$grandTotal"}
+                            }},
+                        {$sort: {_id:-1}},
+                        {$limit: 30}
                     ]
                 }
             }
-        ]);
+        ])
 
         return { status: "success", data: data };
     } catch (e) {
@@ -67,4 +37,4 @@ const PurchaseReportService = async (req) => {
     }
 };
 
-module.exports = PurchaseReportService;
+module.exports = PurchaseSummaryService;

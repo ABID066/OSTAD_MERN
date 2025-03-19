@@ -1,20 +1,24 @@
+const ExpenseSummaryService = require("../../services/summary/ExpenseSummaryService");
+const PurchaseSummaryService = require("../../services/summary/PurchaseSummaryService");
+const ReturnSummaryService = require("../../services/summary/ReturnSummaryService");
+const SalesSummaryService = require("../../services/summary/SalesSummaryService");
 
-exports.ExpensesByDate = async (req, res) => {
-    let result = await ExpenseReportService(req);
+exports.ExpensesSummary = async (req, res) => {
+    let result = await ExpenseSummaryService(req);
     res.status(200).send(result);
 }
 
-exports.PurchaseByDate = async (req, res) => {
-    let result = await PurchaseReportService(req);
+exports.PurchaseSummary = async (req, res) => {
+    let result = await PurchaseSummaryService(req);
     res.status(200).send(result);
 }
 
-exports.ReturnByDate = async (req, res) => {
-    let result = await ReturnReportService(req);
+exports.ReturnSummary = async (req, res) => {
+    let result = await ReturnSummaryService(req);
     res.status(200).send(result);
 }
 
-exports.SalesByDate = async (req, res) => {
-    let result = await SalesReportService(req);
+exports.SalesSummary = async (req, res) => {
+    let result = await SalesSummaryService(req);
     res.status(200).send(result);
 }
