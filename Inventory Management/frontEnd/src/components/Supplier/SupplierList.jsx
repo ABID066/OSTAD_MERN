@@ -1,9 +1,9 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
-import {AiOutlineDelete, AiOutlineEdit} from "react-icons/all";
+import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 import ReactPaginate from "react-paginate";
-import {DeleteSupplierRequest, SupplierListRequest} from "../../APIRequest/SupplierAPIRequest";
+import {DeleteSupplierRequest, SupplierListRequest} from "../../APIRequest/SupplierAPIRequest.js";
 import {DeleteAlert} from "../../helper/DeleteAlert";
 
 const SupplierList = () => {
