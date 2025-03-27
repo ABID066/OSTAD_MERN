@@ -16,7 +16,7 @@
     bottom: 0;
     cursor: pointer;
     z-index: 500000 !important;
-    background-color: rgba(9, 26, 216, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 .Line-Progress .indeterminate {
     background-color: var(--bs-dark);

@@ -33,7 +33,13 @@ import LoginPage from "./pages/Users/LoginPage.jsx";
 import RegistrationPage from "./pages/Users/RegistrationPage.jsx";
 import ForgetPassPage from "./pages/Users/ForgetPassPage.jsx";
 import VerifyOTPPage from "./pages/Users/VerifyOTPPage.jsx";
-import CreatePasswordPage from "./pages/Users/CreatePasswordPage.jsx";
+import ResetPasswordPage from "./pages/Users/ResetPasswordPage.jsx";
+
+// eslint-disable-next-line react/prop-types
+const ProtectedRoute = ({ children }) => {
+    return getToken() ? children : <Navigate to="/login" replace />;
+};
+
 
 const App = () => {
 
@@ -41,43 +47,44 @@ const App = () => {
             <Fragment>
                 <BrowserRouter>
                     <Routes>
-                        <Route exact path="/BrandCreateUpdatePage" element={<BrandCreateUpdatePage />}/>
-                        <Route exact path="/BrandListPage" element={<BrandListPage />}/>
+                        <Route exact path="/BrandCreateUpdatePage" element={<ProtectedRoute><BrandCreateUpdatePage /></ProtectedRoute>}/>
+                        <Route exact path="/BrandListPage" element={<ProtectedRoute><BrandListPage /></ProtectedRoute>}/>
 
-                        <Route exact path="/CategoryCreateUpdatePage" element={<CategoryCreateUpdatePage />}/>
-                        <Route exact path="/CategoryListPage" element={<CategoryListPage />}/>
+                        <Route exact path="/CategoryCreateUpdatePage" element={<ProtectedRoute><CategoryCreateUpdatePage /></ProtectedRoute>}/>
+                        <Route exact path="/CategoryListPage" element={<ProtectedRoute><CategoryListPage /></ProtectedRoute>}/>
 
-                        <Route exact path="/CustomerCreateUpdatePage" element={<CustomerCreateUpdatePage />}/>
-                        <Route exact path="/CustomerListPage" element={<CustomerListPage />}/>
+                        <Route exact path="/CustomerCreateUpdatePage" element={<ProtectedRoute><CustomerCreateUpdatePage /></ProtectedRoute>}/>
+                        <Route exact path="/CustomerListPage" element={<ProtectedRoute><CustomerListPage /></ProtectedRoute>}/>
 
-                        <Route exact path="/ExpenseTypeCreateUpdatePage" element={<ExpenseTypeCreateUpdatePage />}/>
-                        <Route exact path="/ExpenseTypeListPage" element={<ExpenseTypeListPage />}/>
+                        <Route exact path="/ExpenseTypeCreateUpdatePage" element={<ProtectedRoute><ExpenseTypeCreateUpdatePage /></ProtectedRoute>}/>
+                        <Route exact path="/ExpenseTypeListPage" element={<ProtectedRoute><ExpenseTypeListPage /></ProtectedRoute>}/>
 
-                        <Route exact path="/ExpenseCreateUpdatePage" element={<ExpenseCreateUpdatePage />}/>
-                        <Route exact path="/ExpenseListPage" element={<ExpenseListPage />}/>
-                        <Route exact path="/ProductCreateUpdatePage" element={<ProductCreateUpdatePage />}/>
-                        <Route exact path="/ProductListPage" element={<ProductListPage />}/>
+                        <Route exact path="/ExpenseCreateUpdatePage" element={<ProtectedRoute><ExpenseCreateUpdatePage /></ProtectedRoute>}/>
+                        <Route exact path="/ExpenseListPage" element={<ProtectedRoute><ExpenseListPage /></ProtectedRoute>}/>
+                        <Route exact path="/ProductCreateUpdatePage" element={<ProtectedRoute><ProductCreateUpdatePage /></ProtectedRoute>}/>
+                        <Route exact path="/ProductListPage" element={<ProtectedRoute><ProductListPage /></ProtectedRoute>}/>
 
-                        <Route exact path="/PurchaseCreateUpdatePage" element={<PurchaseCreateUpdatePage />}/>
-                        <Route exact path="/PurchaseListPage" element={<PurchaseListPage />}/>
+                        <Route exact path="/PurchaseCreateUpdatePage" element={<ProtectedRoute><PurchaseCreateUpdatePage /></ProtectedRoute>}/>
+                        <Route exact path="/PurchaseListPage" element={<ProtectedRoute><PurchaseListPage /></ProtectedRoute>}/>
 
-                        <Route exact path="/ReturnCreateUpdatePage" element={<ReturnCreateUpdatePage />}/>
-                        <Route exact path="/ReturnListPage" element={<ReturnListPage />}/>
+                        <Route exact path="/ReturnCreateUpdatePage" element={<ProtectedRoute><ReturnCreateUpdatePage /></ProtectedRoute>}/>
+                        <Route exact path="/ReturnListPage" element={<ProtectedRoute><ReturnListPage /></ProtectedRoute>}/>
 
-                        <Route exact path="/SalesCreateUpdatePage" element={<SalesCreateUpdatePage />}/>
-                        <Route exact path="/SalesListPage" element={<SalesListPage />}/>
+                        <Route exact path="/SalesCreateUpdatePage" element={<ProtectedRoute><SalesCreateUpdatePage /></ProtectedRoute>}/>
+                        <Route exact path="/SalesListPage" element={<ProtectedRoute><SalesListPage /></ProtectedRoute>}/>
 
-                        <Route exact path="/SupplierCreateUpdatePage" element={<SupplierCreateUpdatePage />}/>
-                        <Route exact path="/SupplierListPage" element={<SupplierListPage />}/>
+                        <Route exact path="/SupplierCreateUpdatePage" element={<ProtectedRoute><SupplierCreateUpdatePage /></ProtectedRoute>}/>
+                        <Route exact path="/SupplierListPage" element={<ProtectedRoute><SupplierListPage /></ProtectedRoute>}/>
 
-                        <Route exact path="/PurchaseReportPage" element={<PurchaseReportPage />}/>
-                        <Route exact path="/ReturnReportPage" element={<ReturnReportPage />}/>
-                        <Route exact path="/SaleReportPage" element={<SaleReportPage />}/>
-                        <Route exact path="/ExpenseReportPage" element={<ExpenseReportPage />}/>
+                        <Route exact path="/PurchaseReportPage" element={<ProtectedRoute><PurchaseReportPage /></ProtectedRoute>}/>
+                        <Route exact path="/ReturnReportPage" element={<ProtectedRoute><ReturnReportPage /></ProtectedRoute>}/>
+                        <Route exact path="/SaleReportPage" element={<ProtectedRoute><SaleReportPage /></ProtectedRoute>}/>
+                        <Route exact path="/ExpenseReportPage" element={<ProtectedRoute><ExpenseReportPage /></ProtectedRoute>}/>
 
-                        <Route exact path="/Deshboard" element={<DashboardPage />}/>
-                        <Route exact path="/Profile" element={<ProfilePage/>}/>
-                        <Route path="*" element={<Page404/>}/>
+                        <Route exact path="/" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>}/>
+                        <Route exact path="/Profile" element={<ProtectedRoute><ProfilePage/></ProtectedRoute>}/>
+
+                        <Route path="*" element={<ProtectedRoute><Page404/></ProtectedRoute>}/>
 
 
 
@@ -86,7 +93,7 @@ const App = () => {
                         <Route exact path="/Registration" element={<RegistrationPage />}/>
                         <Route exact path="/forget-password" element={<ForgetPassPage/>}/>
                         <Route exact path="/VerifyOTP" element={<VerifyOTPPage/>}/>
-                        <Route exact path="/CreatePassword" element={<CreatePasswordPage/>}/>
+                        <Route exact path="/ResetPassword" element={<ResetPasswordPage/>}/>
                         <Route path="*" element={<Page404/>}/>
                     </Routes>
                 </BrowserRouter>

@@ -1,23 +1,42 @@
-import React, {Fragment} from 'react';
-import {setOTP} from "../../helper/SessionHelper.js";
+import React, {Fragment, useState} from 'react';
+import {getEmail, setOTP} from "../../helper/SessionHelper.js";
 import ReactCodeInput from "react-code-input";
+import {useNavigate} from "react-router-dom";
+import {VerifyOTPRequest} from "../../APIRequest/UserAPIRequest.js";
+import {ErrorToast, SuccessToast} from "../../helper/FormHelper.js";
 
 const VerifyOtp = () => {
 
-    let  defaultInputStyle= {
-        fontFamily: "monospace",
-        MozAppearance: "textfield",
-        margin: "4px",
-        paddingLeft: "8px",
-        width: "45px",
+    let navigate = useNavigate();
+
+    const  defaultInputStyle= {
+        fontFamily: 'monospace',
+        margin:  '4px',
+        MozAppearance: 'textfield',
+        width: '45px',
         borderRadius: '3px',
-        height: "45px",
-        fontSize: "32px",
-        border: '1px solid lightskyblue',
-        boxSizing: "border-box",
+        fontSize: '32px',
+        height: '45px',
+        paddingLeft: '8px',
+        border: "1px solid lightskyblue",
+        boxSizing: 'border-box',
         color: "black",
-        backgroundColor: "white",
-        borderColor: "lightgrey"
+        backgroundColor: 'white',
+        borderColor: 'lightgrey',
+    }
+
+    let [OTP, setOTP] = useState("")
+
+    const SubmitOTP = async () => {
+        if(OTP.length===6){
+            let result = await VerifyOTPRequest(getEmail(),OTP)
+            if (result === true) {
+                SuccessToast("OTP Verified!");
+                navigate("/ResetPassword");
+            }
+        } else {
+            ErrorToast("Enter 6 digit Code!")
+        }
     }
 
     return (
@@ -28,10 +47,14 @@ const VerifyOtp = () => {
                         <div className="card w-90">
                             <div className="card-body">
                                 <h4>OTP VERIFICATION </h4>
-                                <p>A 6 Digit verification code has been sent to your email address. </p>
-                                <ReactCodeInput   inputStyle={defaultInputStyle}  fields={6}/>
-                                <br/>  <br/>
-                                <button  className="btn w-100 btn-success">Next</button>
+                                <p className="pt-4">A 6 Digit verification code has been sent to your email
+                                    address. </p>
+                                <div className="text-center">
+                                    <ReactCodeInput onChange={(value) => setOTP(value)} inputStyle={defaultInputStyle}
+                                                    type='number' fields={6}/>
+                                </div>
+                                <br/> <br/>
+                                <button onClick={SubmitOTP} className="btn w-100 btn-success">Next</button>
                             </div>
                         </div>
                     </div>
