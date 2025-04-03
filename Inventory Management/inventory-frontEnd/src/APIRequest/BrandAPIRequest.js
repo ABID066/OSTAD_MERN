@@ -1,10 +1,8 @@
 import store from "../redux/store/store";
 import { HideLoader, ShowLoader } from "../redux/state-slice/settings-slice";
 import axios from "axios";
-import {BaseURL} from "../helper/config.js";
-import {getToken} from "../helper/SessionHelper.js";
+import {AxiHeader, BaseURL} from "../helper/config.js";
 import {SetBrandList, SetBrandListTotal} from "../redux/state-slice/brand-slice.js";
-const AxiHeaderConfig = {headers: {"token": getToken()}}
 
 
 export async function BrandListRequest(pageNo, perPage, searchKeyword) {
@@ -14,7 +12,7 @@ export async function BrandListRequest(pageNo, perPage, searchKeyword) {
 
         let URL = `${BaseURL}/BrandList/${pageNo}/${perPage}/${searchKeyword}`;
 
-        const res = await axios.get(URL,AxiHeaderConfig);
+        const res = await axios.get(URL,AxiHeader());
 
         store.dispatch(HideLoader());
 

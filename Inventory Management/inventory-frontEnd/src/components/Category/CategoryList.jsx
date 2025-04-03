@@ -113,7 +113,7 @@ const CategoryList = () => {
                                                                 </td>
                                                                 <td>
                                                                     <Link
-                                                                        to={`/BrandCreateUpdatePage?id=${item["_id"]}`}
+                                                                        to={`/CategoryCreateUpdatePage?id=${item["_id"]}`}
                                                                         className="btn text-info btn-outline-light p-2 mb-0 btn-sm">
                                                                         <AiOutlineEdit size={15}/>
                                                                     </Link>

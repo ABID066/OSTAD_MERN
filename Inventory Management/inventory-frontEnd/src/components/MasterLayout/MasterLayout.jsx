@@ -4,10 +4,12 @@ import { NavLink } from 'react-router-dom';
 import {AiOutlineBank,AiOutlineUnorderedList, AiOutlineLogout, AiOutlineMenu, AiOutlineUser} from 'react-icons/ai';
 import {BsBagPlus, BsBagX, BsBox, BsCartPlus, BsCircle, BsGraphUp, BsPeople} from 'react-icons/bs';
 import {TbTruckDelivery} from 'react-icons/tb';
-import {RiDashboardLine} from 'react-icons/ri';
+import {RiDashboardLine, RiFileList2Line} from 'react-icons/ri';
 import {IoCreateOutline} from 'react-icons/io5';
 import logo from "../../assets/images/Logo.svg"
 import {getUserDetails, removeSessions} from "../../helper/SessionHelper";
+import {MdOutlineCreate, MdOutlineEditNote} from "react-icons/md";
+import {LuClipboardList} from "react-icons/lu";
 
 
 const MasterLayout = (props) => {
@@ -62,13 +64,13 @@ const MasterLayout = (props) => {
             subMenu: [
                 {
                     title: 'New Customer',
-                    icon: <BsCircle size={16} className="side-bar-subitem-icon" />,
+                    icon: <MdOutlineCreate size={16} className="side-bar-subitem-icon" />,
                     url: '/CustomerCreateUpdatePage',
                 },
                 {
                     title: 'Customer List',
                     icon: (
-                        <BsCircle size={16} className="side-bar-subitem-icon" />
+                        <RiFileList2Line size={16} className="side-bar-subitem-icon" />
                     ),
                     url: '/CustomerListPage',
                 },
@@ -81,13 +83,13 @@ const MasterLayout = (props) => {
             subMenu: [
                 {
                     title: 'New Supplier',
-                    icon: <BsCircle size={16} className="side-bar-subitem-icon" />,
+                    icon: <MdOutlineCreate size={16} className="side-bar-subitem-icon" />,
                     url: '/SupplierCreateUpdatePage',
                 },
                 {
                     title: 'Supplier List',
                     icon: (
-                        <BsCircle size={16} className="side-bar-subitem-icon" />
+                        <RiFileList2Line size={16} className="side-bar-subitem-icon" />
                     ),
                     url: '/SupplierListPage',
                 },
@@ -100,13 +102,13 @@ const MasterLayout = (props) => {
             subMenu: [
                 {
                     title: 'New Expense Type',
-                    icon: <BsCircle size={16} className="side-bar-subitem-icon" />,
+                    icon: <MdOutlineCreate size={16} className="side-bar-subitem-icon" />,
                     url: '/ExpenseTypeCreateUpdatePage',
                 },
                 {
                     title: 'Expense Type List',
                     icon: (
-                        <BsCircle size={16} className="side-bar-subitem-icon" />
+                        <RiFileList2Line size={16} className="side-bar-subitem-icon" />
                     ),
                     url: '/ExpenseTypeListPage',
                 },
@@ -131,37 +133,37 @@ const MasterLayout = (props) => {
             subMenu: [
                 {
                     title: 'New Brand',
-                    icon: <BsCircle size={16} className="side-bar-subitem-icon" />,
+                    icon: <MdOutlineCreate size={16} className="side-bar-subitem-icon" />,
                     url: '/BrandCreateUpdatePage',
                 },
                 {
                     title: 'Brand List',
                     icon: (
-                        <BsCircle  size={16} className="side-bar-subitem-icon" />
+                        <RiFileList2Line  size={16} className="side-bar-subitem-icon" />
                     ),
                     url: '/BrandListPage',
                 },
                 {
                     title: 'New Category',
-                    icon: <BsCircle size={16} className="side-bar-subitem-icon" />,
+                    icon: <IoCreateOutline size={16} className="side-bar-subitem-icon" />,
                     url: '/CategoryCreateUpdatePage',
                 },
                 {
                     title: 'Category List',
                     icon: (
-                        <BsCircle size={16} className="side-bar-subitem-icon" />
+                        <AiOutlineUnorderedList size={16} className="side-bar-subitem-icon" />
                     ),
                     url: '/CategoryListPage',
                 },
                 {
                     title: 'New Product',
-                    icon: <BsCircle size={16} className="side-bar-subitem-icon" />,
+                    icon: <MdOutlineEditNote size={16} className="side-bar-subitem-icon" />,
                     url: '/ProductCreateUpdatePage',
                 },
                 {
                     title: 'Product List',
                     icon: (
-                        <BsCircle  size={16} className="side-bar-subitem-icon" />
+                        <LuClipboardList  size={16} className="side-bar-subitem-icon" />
                     ),
                     url: '/ProductListPage',
                 },
@@ -174,13 +176,13 @@ const MasterLayout = (props) => {
             subMenu: [
                 {
                     title: 'New Purchase',
-                    icon: <BsCircle size={16} className="side-bar-subitem-icon" />,
+                    icon: <MdOutlineCreate size={16} className="side-bar-subitem-icon" />,
                     url: '/PurchaseCreateUpdatePage',
                 },
                 {
                     title: 'Purchase List',
                     icon: (
-                        <BsCircle size={16} className="side-bar-subitem-icon" />
+                        <RiFileList2Line size={16} className="side-bar-subitem-icon" />
                     ),
                     url: '/PurchaseListPage',
                 },
@@ -193,13 +195,13 @@ const MasterLayout = (props) => {
             subMenu: [
                 {
                     title: 'New Sale',
-                    icon: <BsCircle  size={16} className="side-bar-subitem-icon" />,
+                    icon: <MdOutlineCreate  size={16} className="side-bar-subitem-icon" />,
                     url: '/SalesCreateUpdatePage',
                 },
                 {
                     title: 'Sale List',
                     icon: (
-                        <BsCircle size={16} className="side-bar-subitem-icon" />
+                        <RiFileList2Line size={16} className="side-bar-subitem-icon" />
                     ),
                     url: '/SalesListPage',
                 },
@@ -212,12 +214,12 @@ const MasterLayout = (props) => {
             subMenu: [
                 {
                     title: 'New Return',
-                    icon: <BsCircle size={16} className="side-bar-subitem-icon" />,
+                    icon: <MdOutlineCreate size={16} className="side-bar-subitem-icon" />,
                     url: '/ReturnCreateUpdatePage',
                 },
                 {
                     title: 'Return List',
-                    icon: (<BsCircle size={16} className="side-bar-subitem-icon" />),
+                    icon: (<RiFileList2Line size={16} className="side-bar-subitem-icon" />),
                     url: '/ReturnListPage',
                 },
             ],
